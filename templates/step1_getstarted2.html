@@ -236,29 +236,6 @@
     var adult_ct = 0;
     var form_num = 2;
 
-    function valid_section(section) {
-        var error = false;
-        console.log(section)
-        $.each($('.section' + section + ' .slprequired'), function()
-        {
-            if ($(this).attr('type') == 'radio') {
-                if ($(this).is(':checked')) {
-
-                }
-            }
-            if($(this).val() == ''){
-                $('#error_section' + section).html('Must complete all fields');
-                error = true;
-            }
-            console.log($(this).val())
-        });
-        if (error){
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
 
     $(document).foundation();
     $(document).ready(function() {
@@ -433,6 +410,8 @@
 
         $("#submitslpapp").click(function () {
             var slpapp = {};
+            var childlist = [];
+            var adultlist = [];
 
             var childdata = $('#form2').serializeArray();
             var childObject = {};
@@ -440,6 +419,56 @@
                 function(i, v) {
                     childObject[v.name] = v.value;
             });
+            var childlistin = [];
+            $.each(childObject,
+                    function(k, v){
+                        if (k.search("child_fn") != -1) {
+                            childlistin.push(k.substr(9,1))
+                        }
+                        else {
+                            return;
+                        }
+            });
+            for (var i = 0; i < childlistin.length; ++i){
+                var child = {};
+                if (childObject.hasOwnProperty("child_fn[" + childlistin[i] + "]")) {
+                    child["child_fn"] = childObject["child_fn[" + childlistin[i] + "]"];
+                }
+                else {
+                    child["child_fn"] = "";
+                }
+                if (childObject.hasOwnProperty("child_mi[" + childlistin[i] + "]")) {
+                    child["child_mi"] = childObject["child_mi[" + childlistin[i] + "]"];
+                }
+                else {
+                    child["child_mi"] = "";
+                }
+                if (childObject.hasOwnProperty("child_ln[" + childlistin[i] + "]")) {
+                    child["child_ln"] = childObject["child_ln[" + childlistin[i] + "]"];
+                }
+                else {
+                    child["child_ln"] = "";
+                }
+                if (childObject.hasOwnProperty("child_student[" + childlistin[i] + "]")) {
+                    child["child_student"] = childObject["child_student[" + childlistin[i] + "]"];
+                }
+                else {
+                    child["child_student"] = "";
+                }
+                if (childObject.hasOwnProperty("child_foster[" + childlistin[i] + "]")) {
+                    child["child_foster"] = childObject["child_foster[" + childlistin[i] + "]"];
+                }
+                else {
+                    child["child_foster"] = "";
+                }
+                if (childObject.hasOwnProperty("child_other[" + childlistin[i] + "]")) {
+                    child["child_other"] = childObject["child_other[" + childlistin[i] + "]"];
+                }
+                else {
+                    child["child_other"] = "";
+                }
+                childlist.push(child)
+            }
             var pgmdata = $('#form3').serializeArray();
             var pgmObject = {};
             $.each(pgmdata,
@@ -452,9 +481,35 @@
                 function(i, v) {
                     adultObject[v.name] = v.value;
             });
-            slpapp["children"] = childObject;
+            var adultlistin = [];
+            $.each(adultObject,
+                    function(k, v){
+                        if (k.search("adult_fn") != -1) {
+                            adultlistin.push(k.substr(9,1))
+                        }
+                        else {
+                            return;
+                        }
+            });
+            for (var i = 0; i < adultlistin.length; ++i){
+                var adult = {};
+                if (adultObject.hasOwnProperty("adult_fn[" + adultlistin[i] + "]")) {
+                    adult["adult_fn"] = adultObject["adult_fn[" + adultlistin[i] + "]"];
+                }
+                else {
+                    adult["adult_fn"] = "";
+                }
+                if (adultObject.hasOwnProperty("adult_ln[" + adultlistin[i] + "]")) {
+                    adult["adult_fn"] = adultObject["adult_ln[" + adultlistin[i] + "]"];
+                }
+                else {
+                    adult["adult_ln"] = "";
+                }
+                adultlist.push(adult)
+            }
+            slpapp["children"] = childlist;
             slpapp["pgmdata"] = pgmObject;
-            slpapp["adultdata"] = adultObject;
+            slpapp["adultdata"] = adultlist;
             console.log(slpapp)
             return;
 
