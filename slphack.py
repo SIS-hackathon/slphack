@@ -8,9 +8,13 @@ app.config.from_object(DevelopmentConfig)    # Change setting per deployment
 
 
 @app.route('/')
-@app.route('/startapp')
+@app.route('/goslp')
 def index():
-    return render_template('step1_getstarted2.html')
+    return render_template('slp_getstarted0.html')
+
+@app.route('/slpapp')
+def slpapp():
+    return render_template('step1_getstarted3.html')
 
 @app.route('/save_slp_app')
 def saveslpapp():
