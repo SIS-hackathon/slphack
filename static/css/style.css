@@ -1226,11 +1226,7 @@ ul.tabs.vertical:focus {outline:none;}
 
 
 
-/*
-
-Left Nav
-
-*/
+/* Left Nav */
 
 .left-nav {
 
@@ -1396,15 +1392,9 @@ ol.prog li.todo:nth-child(8):before {
   content:"8";
 }
 
-
-
-
-
 .left-nav ol li {
 
-
 }
-
 
 .left-nav div {
 /*  background:#454A57;*/
@@ -1431,6 +1421,8 @@ ol.prog li.todo:nth-child(8):before {
   background:#ffffff; 
 }
 
+/* Footer Nav */
+
 .footer-nav {
     position: fixed;
     bottom: 0px;
@@ -1450,19 +1442,26 @@ ol.prog li.todo:nth-child(8):before {
 }
 
 .circle.button {
-    /* font-weight: 700; */
     padding: 0.7rem 0.75rem 0.7rem 0.75rem;
     background-color: #458ccf;
     border-color: #458ccf;
     margin-left:6px;
+    width:49px;
+    height:49px;
 }
-
-.footer-nav img.arrow {
-  width:12px;
+.footer.button {
+    padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+    background-color: #458ccf;
+    border-color: #458ccf;
+    margin-left:6px;  
 }
 
 .footer-nav img {
-width:20px;
+  width:16px;
+}
+
+.footer-nav img {
+/*width:20px;*/
 
 }
 
