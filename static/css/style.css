@@ -1,3 +1,15 @@
+/***
+
+TOC
+0. External Libs
+1. Global Styles
+2. Page Specific Styles 
+
+
+***/
+
+
+
 @import 'foundation-icons.css';
 @import 'promin.css';
 @import 'animate.min.css';
@@ -22,28 +34,28 @@ html {
 }
 
 body {
-/*    background: #fff;*/
-/*    background: #f1f1f1;        */
-/*    color: #222;*/
   cursor: auto;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
   margin: 0;
-  padding-top: 135px;
+  padding-top: 0px;
   position: relative;
 }
 body, html {
-height:100%;
+  height:100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-/*    color: #222222;*/
     color:#4e5b68;
 }
 
+
+.page {
+  margin-top:90px;
+}
+
 button, .button {
-/*  font-weight:700;  */
   padding: 0.4rem 1.5rem 0.5rem 1.5rem;  
   background-color:#458ccf;
   border-color:#458ccf;
@@ -117,24 +129,23 @@ Step 0
 /*Welcome Screen*/
 
 .process .large-4:after {
-    position:absolute;
-    top:30%;
-    right:-20px;
+  position:absolute;
+  top:30%;
+  right:-20px;
   z-index:-1;
-    content:"";  
+  content:"";  
   background-image:url('../img/arrow-process-right.png');
   background-position: right;   
   height:100px;
   background-repeat:no-repeat;
   background-size:contain;
   width:100px;
-/*  background:#000000;*/
-    display:inline-block;
-    vertical-align:top;  
+  display:inline-block;
+  vertical-align:top;  
 }
 .process .large-4:last-child:after, .process .large-4:nth-child(3):after {
   background-image:none !important;  
-    content:"";
+  content:"";
   display: none;
 }
 
@@ -145,8 +156,6 @@ Step 0
 }
 
 ol.app-steps {
-
-/*  margin-left:40px;  */
   list-style-type:none;
   margin-left:20px;
   margin-top: 30px;
@@ -159,23 +168,22 @@ ol.app-steps li {
 }
 
 ol.app-steps li:before {
-    position: relative;
-    top:-4px;
-    float: left;
-    margin-left:-40px;
-    background:#ffffff;
-    content:"";
-    color: #aaaaaa;
-    background-color: none;
-    font-size: 1.1em;
-    opacity:1;
-    width:32px;
-    height:32px;    
-    line-height: 160%;  
-    border:solid 2px #aaaaaa;
-    border-radius:1000px;
-    text-align:center;
-
+  position: relative;
+  top:-4px;
+  float: left;
+  margin-left:-40px;
+  background:#ffffff;
+  content:"";
+  color: #aaaaaa;
+  background-color: none;
+  font-size: 1.1em;
+  opacity:1;
+  width:32px;
+  height:32px;    
+  line-height: 160%;  
+  border:solid 2px #aaaaaa;
+  border-radius:1000px;
+  text-align:center;
 }
 
 
@@ -222,7 +230,6 @@ Step 1
   background: url('../img/search_icon_grey.png') #fff no-repeat scroll 7px 5px;
   padding-left:40px;
 }
-
 
 
 /* Circles */
@@ -1630,7 +1637,7 @@ form  {
   
 .activefield {
   opacity:1;
- visibility: visible !important;
+  visibility: visible !important;
 } 
    
 

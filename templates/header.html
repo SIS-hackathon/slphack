@@ -4,9 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>School Lunch Program | SIS</title>
-    <link rel="stylesheet" href="/static/css/app.css" />
-    <link rel="stylesheet" href="/static/css/style.css" />
-    <link rel="stylesheet" href="/static/css/promin.css" />
+<link rel="stylesheet" href="/static/css/app.css" />
+<link rel="stylesheet" href="/static/css/style.css" />
+<link rel="stylesheet" href="/static/css/promin.css" />
 </head>
 <style>
     ol{
@@ -18,13 +18,22 @@
         list-style-type: none;
     }
 
-    #form2, #form3, #form4 , #form5, #form6 {
+    #form1, #form3, #form4 , #form5, #form6 {
     display: none;
     }
+
+/*    .pm-step.qsection2.child, .pm-step.qsection3.child .pm-step.childdash.child {
+        display: none;
+    }  */
+
+    li.qsection2, li.qsection3, li.qsection4, #childdash, li.section3 {
+        display: none;
+    }
+
     .pm-step {
-   text-align: center;
-   width:90%;
-  }
+       text-align: center;
+       width:90%;
+    }
 
     .callout {
       margin: 0 0 1rem 0;
@@ -63,15 +72,12 @@
     .errorholder {
         background-color: #fce6e2;
         border: 1px solid rgba(10, 10, 10, 0.25);
-        display: none;
-        width: 400px;
         margin: 0 auto;
     }
 
     .errorcontainer {
         text-align: center;
         width: 100%;
-        padding: 10px;
     }
 
     label.error {
@@ -80,4 +86,3 @@
     }
 
 </style>
-<body>
