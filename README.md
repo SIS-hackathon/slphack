@@ -30,7 +30,7 @@ The main Web application components are the following html pages, javascript fil
 - slpapplication.html (main container page for the application file containing the 4 sub-container html include files which follow below)<br>
 - slpform.html (contains or the html comprising the SLP application form and associated help html which is dynamically displayed to user based on context)<br>
 - slpmenus.html (menu components of application page)<br>
-- header.html (a <link> and <script> tag list of supporting .css and .js libraries used by the application)<br>
+- header.html (contains a list of supporting .css and .js files used by the application)<br>
 - footer.html (html container for footer info)<br>
 
 - slpformlogic.js contains the form navigation logic for the application (this file located in the /static/js/sis directory). This javascript file utilizes the previously listed open-source libraries, such a jQuery, jQuery Validation, Foundation, and HandlebarsJS, to provide
