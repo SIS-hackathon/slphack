@@ -2,7 +2,7 @@ Copyright and license Code and documentation copyright 2016 The Center to Promot
 
 Code released under the MIT license. Documents released under Creative Commons license.
 
-<b>slpapp project was developed for the E.A.T School Lunch UX Challange.</b>
+<b>The "slphack" project was developed for the E.A.T School Lunch UX Challange.</b>
 
 This application uses an open source technology stack consisting of the following components...
 
