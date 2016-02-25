@@ -1,23 +1,50 @@
-{% include 'header.html' %}
-<div class="page">
+<!--  SLPAPP's slp_getstarted0.html
+* Copyright (c) 2016 The Center to Promote Healtcare Access, Inc., DBA Social Interest Solutions
+* Licensed under MIT License (https://github.com/SIS-hackathon/slphack/LICENSE)  -->
+
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>School Lunch Program | SIS</title>
+<link rel="stylesheet" href="/static/css/app.css" />
+<link rel="stylesheet" href="/static/css/style.css" />
+<link rel="stylesheet" href="/static/css/promin.css" />
+</head>
+
+<body>
+
 {% include 'slpmenus0.html' %}
-<div class="large-12 columns">
+
+<div class="small-12 columns">
+    <div class="small-12 medium-8 large-8 small-centered columns">
     <div class="right-content">
-        <div id="appstart">
-            <h1>Okay, Let's Get Started</h1>
-            <p>We need an idea of who this school meal application is for.</p>
-            <p>Step 1. Identify and provide details about the students in your household<br>
-            Step 2. Identify and provide details about the rest of the members in your household<br>
-            Step 3. Provide houslehold income details<br>
-            Step 4. Provide contact details<br>
-            Step 5. Review statements<br>
-            Step 6. Sign and submit<br>
-            <p>
+        <div class="appstart">
+            <p class="text-center"><img src="static/img/school-logo.png" style="max-width:420px;width:100%;"></p>
+            <h1>Free and Reduced Price School Meal Application</h1>
+            <div class="row">
+                <div class="small-12 medium-11 large-11 small-centered columns">
+                    <h4 class="text-center">This application is for the free and reduced price school meals program at AnyTown Public School District schools. When you're ready to start the application, click the "START HERE" button below. If you have any other questions along the way, you can always click the question mark button in the top right corner for helpful information.</h4>
+                </div>
+            </div>
+
+
+            </div>
+            <hr>
             <!-- <p class="text-center" style="max-width:600px;margin-left:auto;margin-right:auto;"><img src="/static/img/addpeople_cta.png"></p> -->
-            <p><a href="/slpapp" id="startapp" class="button round">Add Students</a></p>
+            <p><a href="/slpapp" id="startapp" class="button round">START HERE</a></p>
         </div>
     </div>
+    </div>
 </div>
-</div>
-{% include 'footer.html' %}
-
+</body>
+<script src="/static/js/vendor/jquery.min.js"></script>
+<script src="/static/js/foundation.min.js"></script>
+<script src="/static/js/modernizr.js"></script>
+<script src="/static/js/jquery.promin.js"></script>
+<script src="/static/js/scripts.js"></script>
+<script src="/static/js/jquery.validate.min.js"></script>
+<script src="/static/js/additional-methods.min.js"></script>
+</body>
+</html>

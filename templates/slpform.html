@@ -1,0 +1,1362 @@
+<!--  SLPAPP's slpform.html
+* Copyright (c) 2016 The Center to Promote Healtcare Access, Inc., DBA Social Interest Solutions
+* Licensed under MIT License (https://github.com/SIS-hackathon/slphack/LICENSE)  -->
+
+{% raw %}
+<script id="help-section0" type="text/x-handlebars-template">
+        <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Do I need to fill out an application for each child?</span><br>
+                <span class="a1">No, please complete only one application. This application will cover all students in your household who go to schools in this school district. You can complete the application here online, or you can complete a paper version provided by your students' school or school district.<br></span>
+            </p>
+              <p><span class="q2">Who can get free and reduced price school meals?</span><br>
+                <span class="a2">Students in grades pre-kindergarten through grade 12 who live in a household with income below 130% of the federal poverty level, who are foster children who are formally placed by a court or a state child welfare agency, who meet the definition of homeless, runaway, or migrant, who participate in Head Start, or who live in a household where any family members receive SNAP, TANF, or FDPIR can get free school meals. Students who live in a household with income between 185% and 130% of the federal poverty level can get reduced price school meals.<br></span></p>
+              <p><span class="q3"> I applied last school year. Do I need to apply again?</span><br>
+                <span class="a3">Yes. Your student’s application is only good for that school year and for the first few days of this school year. You have to send in a new application unless the school already told you that your child is able to get free or reduced-price school meals for this school year.<br></span></p>
+              <p><span class="q4">Will the information I give be checked?</span><br>
+                <span class="a4">Yes, and your school may follow up with you to confirm information after they get your application.<br></span></p>
+             <p><span class="q5">Can I apply if someone in my household is not a U.S. citizen?</span><br>
+                <span class="a5">Yes. You or your students do not have to be U.S. citizens to get free or reduced-price school meals.<br></span></p>
+              <p><span class="q6">Who can I get in touch with if I have questions or need help? </span><br>
+                <span class="a6"> If you have questions or need help with this application, call or email your student’s school.<br></span></p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+        </div>
+</script>
+<script id="help-section1" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Who can I apply for?</span><br>
+                <span class="a1">You can apply for students that live in your household (whether they are related to you or not) and share in the household's income and expenses. This means the students either rely on you or others in the household for money, provide money to support others in the household, or both.<br></span>
+            </p>
+            <p>
+               <span class="q2">Who counts as a student?</span><br>
+               <span class="a2">Anyone in grades pre-kindergarten through grade 12, no matter the age.<br></span>
+            </p>
+              <p>
+                <span class="q3">Some of the students in my household go to schools in a different school district. How do I apply for them?</span><br>
+                <span class="a3">This application is only for this school district. To apply for students that go to other school districts, you would need to complete that school district’s application. For any students that go to other school districts, you should still include them later in this application as a household member so that we get the right household count.<br></span>
+              </p>
+              <p>
+                <span class="q4">Some of my children are in Head Start. Should I include them as students?</span><br>
+                <span class="a4">Children in school-based Head Start programs can receive school meals. You should include them as students.</span>
+              </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="help-foster" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Who counts as a foster child?</span><br>
+                <span class="a1">A child who is formally placed by a court or a state child welfare agency. Informal foster care situations do not count.<br></span>
+            </p>
+            <p>
+               <span class="q2">Why does a student being a foster child matter?</span><br>
+               <span class="a2">Any students that are foster children can get free school meals, no matter what. Your student's school or school district may follow up with you to confirm the student's foster care status.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="help-childcat" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Who counts as a homeless child?</span><br>
+                <span class="a1">A child identified by school officials or a local homeless shelter as not having a fixed, regular, and adequate place to sleep. For example, a child that does not have a permanent address and is staying in temporary housing (like shelters or motels) or with others is considered homeless.<br></span>
+            </p>
+            <p>
+               <span class="q2">Who counts as a migrant child?</span><br>
+               <span class="a2">A child identified as a migrant by a Migrant Education Program coordinator, school officials, or by the Food and Nutrition Service (FNS).<br></span>
+            </p>
+            <p>
+               <span class="q3">Who counts as a runaway child?</span><br>
+               <span class="a3">A child identified as a runaway by school officials, or is receiving services from a Runaway and Homeless Youth Act program.<br></span>
+            </p>
+            <p>
+               <span class="q4">Who counts as a child participating in Head Start?</span><br>
+               <span class="a4">A child in a Federal Head Start program, or in a similar state-funded pre-kindergarten program. <br></span>
+            </p>
+            <p>
+               <span class="q5">Why does a student being homeless, a migrant, a runaway, or a Head Start participant matter?</span><br>
+               <span class="a5">Any students that meet these definitions can get free school meals, no matter what. If you pick any of these statuses in an application, your student's school or school district is likely to follow up with you to confirm these.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="help-childdash" type="text/x-handlebars-template">
+       <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+               <span class="q1">Who counts as a student?</span><br>
+               <span class="a1">Anyone in grades pre-kindergarten through grade 12, no matter the age.<br></span>
+            </p>
+              <p>
+                <span class="q2">Some of the students in my household go to schools in a different school district. How do I apply for them?</span><br>
+                <span class="a2">This application is only for this school district. To apply for students that go to other school districts, you would need to complete that school district’s application. For any students that go to other school districts, you should still include them later in this application as a household member so that we get the right household count.<br></span>
+              </p>
+              <p>
+                <span class="q3">Some of my children are in Head Start. Should I include them as students?</span><br>
+                <span class="a3">Children in school-based Head Start programs can receive school meals. You should include them as students.</span>
+              </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="helpintro-section2" type="text/x-handlebars-template">
+        <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">What other benefits programs count?</span><br>
+                <span class="a1">Go to the next page for more details.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+        </div>
+</script>
+<script id="help-section2" type="text/x-handlebars-template">
+        <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1"> Who counts as part of the household?</span><br>
+                <span class="a1">Anyone living with you and that shares in income and expenses. This means those that either rely on you or others in the household for money, provide money to support others in the household, or both.<br></span>
+            </p>
+              <p><span class="q2">What is the Supplemental Nutrition Assistance Program (SNAP)?</span><br>
+                <span class="a2"> SNAP helps eligible low-income individuals and families be able to buy enough food to maintain good health. SNAP may be called something else where you live.<br></span></p>
+              <p><span class="q3">What is Temporary Assistance for Needy Families (TANF)?</span><br>
+                <span class="a3">TANF gives cash assistance to eligible low-income families. It also gives other assistance, like job preparation services, to help low-income families become self-sufficient. TANF may be called something else where you live.<br></span></p>
+              <p><span class="q4">What is the Food Distribution Program on Indian Reservations (FDPIR)?</span><br>
+                <span class="a4">FDPIR gives U.S. Department of Agriculture (USDA) foods to eligible families living on Indian reservations and to American Indian/Native American families living in other areas approved for FDPIR.<br></span></p>
+               <p><span class="q5">I can’t find my case number for any of these programs (or I found a number but don’t know if it’s the right one). What do I do? </span><br>
+                <span class="a5">We suggest contacting the program you’re trying to get the case number for. You can also still complete this application without a case number, but you will need to answer questions about your household’s income.<br></span></p>
+               <p><span class="q6">Why does someone in the household participating in SNAP, TANF, or FDPIR matter?</span><br>
+                <span class="a6">Someone in the household participating in SNAP, TANF, or FDPIR means all students in your household can get free school meals.<br></span></p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+        </div>
+</script>
+<script id="helpintro-section3" type="text/x-handlebars-template">
+        <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Why do I need to include adults in the household?</span><br>
+                <span class="a1">We ask about adults because we need to know how many people total are in the household. We also need to know about the household's income. This all helps us figure out if the students in the household can get free or reduced price meals.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+        </div>
+</script>
+<script id="help-section3" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Who counts as part of the household?</span><br>
+                <span class="a1"> Anyone living with you and that shares in income and expenses. This means those that either rely on you or others in the household for money, provide money to support others in the household, or both. Except for members of the U.S. military who are activated or deployed, those who have not been living with the household for a long period of time are not considered household members.<br></span>
+            </p>
+            <p>
+               <span class="q2">One or more of the students I already added are at least 18 years old. Do I add them again here?</span><br>
+               <span class="a2">No. If those students have already been added before, do not add them again here.<br></span>
+            </p>
+              <p>
+                <span class="q3">What is an emancipated minor?</span><br>
+                <span class="a3">A child (under 18 years old) that is legally independent from his/her parents or guardians. Emancipated minors do not have to answer certain questions that adults would in this application.<br></span>
+              </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="help-adultincome" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1"> What counts as earnings from work? What amount do I put?</span><br>
+                <span class="a1">Use the amount before taxes are taken out ("gross amount"). Earnings from work include salary, wages, and cash bonuses, net income from self-employment (farm or business), and strike benefits. If you or another adult in the household is in the U.S. military, basic pay, cash bonuses, and allowances for off-base housing, food, and clothing all count as well.<br></span>
+            </p>
+            <p>
+               <span class="q2">What counts as public assistance, alimony, and child support income?</span><br>
+               <span class="a2">Unemployment benefits, worker’s compensation, Supplemental Security Income (SSI), cash assistance from State or local government, alimony payments, child support payments, and veteran’s benefits.<br></span>
+            </p>
+            <p>
+               <span class="q3">What counts as pensions and retirement income?</span><br>
+               <span class="a3">Social Security (including railroad retirement and black lung benefits), private pensions or disability benefits, income from trusts or estates, annuities, investment income, earned interest, rental income, and any regular cash payments from outside the household.<br></span>
+            </p>
+            <p>
+               <span class="q4">What if I have a source of income that doesn’t fit under any of those?</span><br>
+               <span class="a4">You can include any other types of income under the “pensions/retirement/other” category.<br></span>
+            </p>
+            <p>
+               <span class="q5">What should NOT be included?</span><br>
+               <span class="a5">You should not include any payments from a foster care agency or court for the care of foster children. If you or another adult in the household is in the U.S. military, do not include combat pay, Family Subsistence Supplemental Allowance (FSSA), or privatized housing allowances.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="help-adultss" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">What’s a social security number? Do I need to provide one?</span><br>
+                <span class="a1"> A social security number is a 9 digit number provided by the U.S. government to U.S. citizens, immigrants with permanent resident status, and some temporary residents.<br><br>
+                We request the last 4 digits of a social security number of an adult in the household, preferably the person signing the application, to help your student's school make a decision on your application
+                more quickly. However, we can accept the last 4 digits of a social security number of any adult in the household if the person signing the application does not have one. If no adults in the household have a social security number, you should check the box that says “I do not have a Social Security Number." Answering this way does not keep students in your household from
+                receiving free or reduced price school meals.</span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="helpintro-section4" type="text/x-handlebars-template">
+        <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Why do I need to include other children in the household that are not students?</span><br>
+                <span class="a1">We ask about other children in the household because we need to know how many people total are in the household. We also need to know about the entire household's income, including any income students and other children receive. This helps us figure out if the students in the household can get free or reduced price meals.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+        </div>
+</script>
+<script id="help-section4" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+              <p>
+                <span class="q1">Why do I need to include other children in the household that are not students?</span><br>
+                <span class="a1">We ask about other children in the household because we need to know how many people total are in the household. We also need to know about the entire household's income, including any income students and other children receive. This helps us figure out if the students in the household can get free or reduced price meals.<br></span>
+            </p>
+            <p>
+                <span class="q2">Which children do I put here?</span><br>
+                <span class="a2">Please put here only children in your household that you have not already put down as students earlier in the application. Children that are too young to be in school, children who have dropped out of school, and children who go to schools in other school districts are examples of who should be included here.<br></span>
+            </p>
+            <p>
+               <span class="q3">Who counts as part of the household?</span><br>
+               <span class="a3">Anyone living with you and that shares in income and expenses. This means those that either rely on you or others in the household for money, provide money to support others in the household, or both. Please put here only children that you have not already put down as students earlier in the application. <br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="help-childrenincome" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Why do I need to include the income of any students and other children in the household?</span><br>
+                <span class="a1">The income any child in the household gets counts towards the household’s overall income amount.<br></span>
+            </p>
+            <p>
+               <span class="q2"> What counts as earnings from work for a child? What amount do I put?</span><br>
+               <span class="a2">For a child, earnings from work include any income from a job the child has that pays a salary or wages. Use the pre-tax amount (gross amount).<br></span>
+            </p>
+            <p>
+               <span class="q3">What other kinds of income should I include for a child?</span><br>
+               <span class="a3">Social Security Disability Payments (child is blind or disabled and receives Social Security benefits), Survivor’s Benefits (child’s parent is disabled, retired, or deceased, and the child receives social security benefits), any money the child receives regularly from a friend or extended family member, and money from a private pension fund, annuity, or trust.<br></span>
+            </p>
+            <p>
+               <span class="q4">When do I need to include a foster child’s income?</span><br>
+               <span class="a4">All foster children in formal foster care arrangements can get free school meals no matter what. If income information about the household needs to be collected in an application, however, any income a foster child receives should be included.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="helpdash-section4" type="text/x-handlebars-template">
+        <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Why do I need to include the income of any students and other children in the household?</span><br>
+                <span class="a1">The income any child in the household gets counts towards the household’s overall income amount.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+        </div>
+</script>
+<script id="helpintro-section5" type="text/x-handlebars-template">
+        <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">What do the next few questions ask?</span><br>
+                <span class="a1">We will ask for ways to contact you and some demographic questions about the children in your household. The remaining questions are optional.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+        </div>
+</script>
+<script id="help-section5-q9" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Do I need to give a mailing address, email address, or a phone number?</span><br>
+                <span class="a1"> You do not have to give any of this information. However, giving one or more of these ways to reach you makes it easier to let you know whether or not the students in your household can get free or reduced price school meals.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="help-section5-q10" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Do I have to answer this question about the race and ethnicity of the children in my household?</span><br>
+                <span class="a1">We have to ask the question, but you do not have to answer it if you do not want to.<br></span>
+            </p>
+             <p>
+                <span class="q2">How do I answer this question for multiple children?</span><br>
+                <span class="a2">Select all that apply for all of the children in your household.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="help-section5-q11" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">Why do you have these statements?</span><br>
+                <span class="a1">We have to include these legal statements in the application. They contain important information for those completing the application to know. <br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="help-section5-q12" type="text/x-handlebars-template">
+    <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
+            <p>
+                <span class="q1">What happens after I submit my application?</span><br>
+                <span class="a1">You should hear back about your application within 10 business days (or within 10 days that your school or school district is in session). If you picked to hear about your application through email, you will likely receive an email. If you only provided a mailing address, you will likely receive a letter in the mail. If you did not provide any way to reach you, your school or school district will follow up with you as best as they can.<br></span>
+            </p>
+          </li>
+          <li class="has-form">
+            <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
+          </li>
+    </div>
+</script>
+<script id="program-template" type="text/x-handlebars-template">
+ <div class="row pgmcase">
+     <div class="small-12 medium-8 large-8 small-centered columns">
+         <div class="field">
+             <input class="validatesec2" id="pgm_case_num" placeholder="Enter program case number(s)" type="text" name="pgm_case_num">
+         </div>
+     </div>
+ </div>
+</script>
+<script id="child-template" type="text/x-handlebars-template">
+ <li class="pm-step section1 qsection1 child{{child_ct}} activeques">
+     <h1>Add the Next Student You are Applying For</h1>
+     <h4>This can be you or it can be any other student in your household.</h4><br>
+     <div class="row">
+         <div class="small-12 medium-6 large-6 columns">
+             <div class="field">
+                 <input class="childfname validate qsection1" placeholder="Student First Name" type="text" name="child_fn[{{child_ct}}]">
+             </div>
+         </div>  
+         <div class="small-12 medium-6 large-6 columns"> 
+             <div class="field">
+                 <input class="childmi" placeholder="Student Middle Initial (optional)" data-rule-maxlength="1" data-msg-required="One letter only" type="text" name="child_mi[{{child_ct}}]">
+             </div>
+         </div>
+         <div class="small-12 columns">    
+            <div class="field">
+                 <input class="childlname validate qsection1" placeholder="Student Last Name" type="text" name="child_ln[{{child_ct}}]">
+            </div>
+         </div>
+     </div>
+    <hr>
+    <input type="button" class="round button childgotonext nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+ </li>
+ <li class="pm-step section1 qsection2 child{{child_ct}}">
+        <h1>Is <span class="childfirstname"></span> a Foster Child?</h1>
+        <h4>A foster child is a child who is formally placed by a court or a state child welfare agency. Any students who are foster children can get free school meals.<span data-tooltip aria-haspopup="true" class="has-tip" title="Your student's school or school district may follow up with you to confirm the student's foster care status. Click the ? button in the top right corner for information about these statuses.
+        "><i class="fa fa-info-circle"></i></span></h4><br>        
+        <ul style="max-width:400px;margin-left:auto;margin-right:auto;" class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
+            <li>
+                 <div class="field radiobutton">
+                <input type="radio" class="foster validate qsection2 ignore" name="child_foster[{{child_ct}}]" value="Y" id="child_foster[{{child_ct}}]y"> <label for="child_foster[{{child_ct}}]y" class="rbox">Yes</label>
+                 </div>
+            </li>
+            <li>
+                <div class="field radiobutton">
+                    <input type="radio" class="foster validate qsection2 ignore" name="child_foster[{{child_ct}}]" value="N" id="child_foster[{{child_ct}}]n"> <label for="child_foster[{{child_ct}}]n" class="rbox">No</label>
+                </div>
+            </li>
+        </ul>
+        <hr>
+         <div class="slpnavigator">
+            <input type="button" class="round button childgotoback" value="< BACK">
+            <input type="button" class="round button childgotonext nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+        </div>
+</li>
+ <li class="pm-step section1 qsection3 child{{child_ct}}">
+          <h1>Is <span class="childfirstname"></span> Any of the Below?</h1>
+          <h4>Any students with one or more of the statuses below can get free school meals. <span data-tooltip aria-haspopup="true" class="has-tip" title="Your student's school or school district may follow up with you to confirm these. Click the ? button in the top right corner for information about these statuses."><i class="fa fa-info-circle"></i></span></h4><br>        
+           <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">
+               <li>
+                   <div class="field checkbox">
+                       <input class="qsection3 ignore check-hidden" type="checkbox" name="child_other[{{child_ct}}]" value="Homeless" id="child_other[{{child_ct}}]a"><label class="cbox" for="child_other[{{child_ct}}]a"> <span data-tooltip aria-haspopup="true" class="has-tip" title="A child identified by school officials or a local homeless shelter as not having a fixed, regular, and adequate place to sleep."><i class="fa fa-info-circle"></i></span> Homeless</label>
+                   </div>
+               </li>
+               <li>
+                   <div class="field checkbox">
+                       <input class="qsection3 ignore check-hidden" type="checkbox" name="child_other[{{child_ct}}]" value="Migrant" id="child_other[{{child_ct}}]b"> <label class="cbox" for="child_other[{{child_ct}}]b"><span data-tooltip aria-haspopup="true" class="has-tip" title="A child identified as a migrant by a Migrant Education Program coordinator, school officials, or by the Food and Nutrition Service (FNS)."><i class="fa fa-info-circle"></i></span> Migrant</label>
+                   </div>
+               </li>
+               <li>
+                   <div class="field checkbox">
+                       <input class="qsection3 ignore check-hidden" type="checkbox" name="child_other[{{child_ct}}]" value="Runaway" id="child_other[{{child_ct}}]c"> <label class="cbox" for="child_other[{{child_ct}}]c"><span data-tooltip aria-haspopup="true" class="has-tip" title="A child identified as a runaway by school officials, or is receiving services from a Runaway and Homeless Youth Act program."><i class="fa fa-info-circle"></i></span> Runaway</label>
+                   </div>
+               </li>
+               <li>
+                   <div class="field checkbox">
+                       <input class="qsection3 ignore check-hidden" type="checkbox" name="child_other[{{child_ct}}]" value="Headstart" id="child_other[{{child_ct}}]d"> <label class="cbox" for="child_other[{{child_ct}}]d"><span data-tooltip aria-haspopup="true" class="has-tip" title="A child in a Head Start program."><i class="fa fa-info-circle"></i></span> Head Start</label>
+                   </div>
+               </li>
+           </ul>
+        <hr>
+        <div class="slpnavigator">
+            <input type="button" class="round button childgotoback" value="< BACK">
+            <input type="button" class="round button endchild" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+        </div>
+ </li>
+</script>
+ <script id="adult-template" type="text/x-handlebars-template">
+<li class="pm-step section3 qsection5 adult{{adult_ct}}">
+    <h1>Add Adult in the Household</h1>
+    <h4>Start adding details about this person.</h4>
+    <br>
+    <div class="row">
+         <div class="small-12 medium-6 large-6 columns">
+             <div class="field">
+                 <input class="adultfname validate qsection5" placeholder="Adult First Name" type="text" name="adult_fn[{{adult_ct}}]">
+             </div>
+         </div>
+         <div class="small-12 medium-6 large-6 columns">
+             <div class="field">
+                 <input class="adultmi" placeholder="Adult Middle Initial (optional)" data-rule-maxlength="1" data-msg-maxlength="One letter only" type="text" name="adult_mi[{{adult_ct}}]">
+             </div>
+         </div>
+        <div class="small-12 columns">
+            <div class="field">
+                 <input class="adultlname validate qsection5" placeholder="Adult Last Name" type="text" name="adult_ln[{{adult_ct}}]">
+             </div>
+        </div>
+    </div>
+    <hr>
+    <div class="slpnavigator">
+        <input type="button" class="round button adultgotonext nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+    </div>
+</li>
+<li class="pm-step section3 qsection6 adult{{adult_ct}}">
+
+    <h1><span class="adultfirstname"></span>'s Income</h1>
+    <h4>Please click the "add source of income" button below to add this person's sources of income. Be sure to think about all the kinds of money that this person gets, including money not earned from a job. <span data-tooltip aria-haspopup="true" class="has-tip" title="If you have questions about what counts as income, click the ? button in the corner."><i class="fa fa-info-circle"></i></span></h4><br>
+    <div id="incomeaddend" class="row">
+            <div class="small-12 columns">
+                <div class="field">
+                    <h4><a href="#" class="datain addnewadultincome round button" style="padding-left:8%;padding-right:8%;">+ Add source of income</a></h4>
+                </div>
+            </div>
+    </div>
+    <hr>
+    <div class="slpnavigator">
+        <input type="button" class="round button adultgotoback nextQuestion" value="< BACK">
+        <input type="button" class="round button endadult nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+    </div>
+</li>
+</script>
+<script id="adult-income-template" type="text/x-handlebars-template">
+    <div class="row">
+        <div class="small-12 medium-12 large-12 columns">
+            <div class="field">
+                 <select placeholder="Select an income type" class="qsection6 validate" name="adultincomesrc[{{adult_ct}}][{{income_ct}}]">
+                     <option value="" disabled selected>Income Type</option>
+                     <option value="Earning Works">Earnings From Work</option>
+                     <option value="PA/CS/Ali">Public Assistance/Child Support/Alimony</option>
+                     <option value="Pen/Ret/Other">Pensions/Retirement/Other</option>
+                 </select>
+             </div>
+        </div>
+        <div class="small-12 medium-6 large-6 columns">
+            <div class="field">
+                <select placeholder="Pay Period" class="qsection6 validate" name="adultincomepayp[{{adult_ct}}][{{income_ct}}]">
+                    <option value="" disabled selected>Pay Period</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="biweekly">Bi-Weekly</option>
+                    <option value="2xmonth">2X Month</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+            </div>
+        </div>
+        <div class="small-12 medium-6 large-6 columns">
+            <div class="field">
+                <input class="qsection6 validate valincome" placeholder="Income Amount" type="text" name="adultincome[{{adult_ct}}][{{income_ct}}]">
+            </div>
+        </div>
+        <div class="small-12 columns">
+            <div class="field">
+               <h4><a href="#" class="datain removeadultincome"><i class="fa fa-trash-o"></i> Remove</a></h4>
+             </div>
+        </div>
+        <hr>
+
+        </div>
+    </div>
+</script>
+<script id="otherchild-template" type="text/x-handlebars-template">
+    <li class="pm-step section4 qsection8 other{{other_ct}}">
+        <h1>Add Child's Details</h1>
+        <h4>Start adding details about this person.</h4><br>
+        <div class="row">
+             <div class="small-12 medium-6 large-6 columns">
+                <div class="field">
+                    <input class="otherfname validate qsection8" placeholder="Child First Name" type="text" name="other_fn[{{other_ct}}]">
+                </div>
+             </div>
+            <div class="small-12 medium-6 large-6 columns">
+                <div class="field">
+                    <input class="othermi" placeholder="Child Middle Initial (optional)" data-rule-maxlength="1" data-msg-maxlength="One letter only" type="text" name="other_mi[{{other_ct}}]">
+                </div>
+            </div>
+            <div class="small-12 columns">
+                <div class="field">
+                    <input class="otherlname validate qsection8" placeholder="Child Last Name" type="text" name="other_ln[{{other_ct}}]">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="slpnavigator">
+            <input type="button" class="round button endotherchild nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+        </div>
+    </li>
+</script>
+<script id="studentincome-template" type="text/x-handlebars-template">
+    <li class="pm-step section4 qsection20 child{{cur_childincome}}">
+        <h1>Child Income Source for <span id="childincname"></span></h1>
+        <h4>Please click the "add source of income" button below to add this person's sources of income. Be sure to think about all the kinds of money that this person gets, including money not earned from a job. <span data-tooltip aria-haspopup="true" class="has-tip" title="If you have questions about what counts as income, click the ? button in the corner."><i class="fa fa-info-circle"></i></span></h4><br>
+        <div id="childincomeaddend" class="row">
+            <div class="small-12 columns">
+                <div class="field">
+                    <h4><a href="#" class="datain addnewchildincome round button" style="padding-left:8%;padding-right:8%;">+ Add source of income</a></h4>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="slpnavigator">
+            <input type="button" class="round button endchildincome nextQuestion" value="DONE"> &nbsp;&nbsp;&nbsp;
+        </div>
+    </li>
+</script>
+<script id="otherincome-template" type="text/x-handlebars-template">
+    <li class="pm-step section4 qsection20 other{{cur_otherincome}}">
+        <h1>Child Income Source for <span id="otherincname"></span></h1>
+        <h4>Please list the types of income sources from the dropdown</h4><br>
+        <div id="otherincomeaddend" class="row">
+            <div class="small-12 columns">
+                <div class="field">
+                     <h4><a href="#" class="datain addnewotherincome round button" style="padding-left:8%;padding-right:8%;">+ Add source of income</a></h4>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="slpnavigator">
+            <input type="button" class="round button endotherincome nextQuestion" value="DONE"> &nbsp;&nbsp;&nbsp;
+        </div>
+    </li>
+</script>
+<script id="addchildincome-template" type="text/x-handlebars-template">
+    <div class="row">
+             <div class="small-12 medium-12 large-12 columns">
+                <div class="field">
+                     <select placeholder="Select an income type" class="qsection20 validate" name="{{childtype}}incomesrc[{{cur_income}}][{{income_ct}}]">
+                         <option value="" disabled selected>Income Type</option>
+                         <option value="Earning Works">Earnings From Work</option>
+                         <option value="SSD">Social Security Disability</option>
+                         <option value="SurBen">Survivor's Benefit</option>
+                         <option value="Pen/Trust/Other">Pension/Trust Fund/Other</option>
+                     </select>
+                 </div>
+             </div>
+            <div class="small-12 medium-6 large-6 columns">
+                <div class="field">
+                    <select placeholder="Pay Period" class="qsection20 validate" name="{{childtype}}incomepayp[{{cur_income}}][{{income_ct}}]">
+                        <option value="" disabled selected>Pay Period</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="biweekly">Bi-Weekly</option>
+                        <option value="2xmonth">2X Month</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+            </div>
+            <div class="small-12 medium-6 large-6 columns">
+                <div class="field">
+                    <input class="qsection20 validate valincome" placeholder="Income Amount" type="text" name="{{childtype}}income[{{cur_income}}][{{income_ct}}]">
+                </div>
+            </div>
+            <div class="small-12 medium-12 large-12 columns">
+                <div class="field">
+                   <h4><a href="#" class="datain removechildincome"><i class="fa fa-trash-o"></i> Remove</a></h4>
+                 </div>
+            </div>
+            <hr>
+    </div>
+</script>
+<script id="childincomerow-template" type="text/x-handlebars-template">
+    <div class="row childincomein">
+             <div class="small-6 columns">
+                <div class="field">
+                    <span id="{{childtype}}incomerowname{{rowid}}"><b>{{first_name}} {{middle_initial}} {{last_name}}</b></span><br>{{#if_eq childtype "child"}}Student{{else}}Non-Student{{/if_eq}}
+                 </div>
+             </div>
+             <div class="small-6 columns">
+                <div class="field">
+                    <input type="button" id="{{c_rowid}}" class="round button {{classtype}}" value="{{buttontext}}">
+                 </div>
+             </div>
+        <hr>
+    </div>
+</script>
+<script id="personrow-template" type="text/x-handlebars-template">
+
+        <div class="row {{rowtype}}">
+             <div class="small-12 medium-12 large-12 columns small-centered columns">
+                <div class="panel field">
+                <!--<p style="text-align:left;margin-bottom:0px;font-size:13px;"><a href="#" class="datain {{edit_type}}" id='{{row_id}}'>Edit Details</a></p>-->              
+                <h3 style="text-align:left;">
+                   <span id="rowname{{row_id}}">{{first_name}} {{middle_initial}} {{last_name}}</span>
+                   <a href="#" class="datain remove right" id="{{remove_type}}{{row_id}}"><i class="fa fa-trash-o"></i></a><a href="#" class="datain {{edit_type}} right" id='{{row_id}}'><i class="fa fa-pencil-square-o" style="line-height: 115%;"></i>&nbsp;</a></h3>
+                 </div>
+             </div>
+        </div>
+</script>
+<script id="contactrow-template" type="text/x-handlebars-template">
+        <div class="row {{rowtype}}">
+             <div class="small-12 columns">
+                <div class="field">
+                   <a href="#" class="datain {{edit_type}}" id='{{row_id}}'>Edit Details</a>
+                 </div>
+             </div>
+        </div>
+        <div class="row {{rowtype}}">
+             <div class="small-12 columns">
+                <div class="field">
+                   <h5><span id="rowname{{row_id}}"><strong>{{first_name}} {{last_name}}</strong></span></h5>
+                 </div>
+             </div>
+        </div>
+</script>
+<script id="appsummary-template" type="text/x-handlebars-template">
+        <div style="text-align:left; font-size: 14px">
+            <ul class="small-block-grid-1" style="text-align: left;">
+                 <li class="text-center">
+                     We collected information about <b>{{app.hhnum}}</b> individual(s). Information about each person is provided below.
+                 </li>
+             </ul>
+            <ul class="small-block-grid-1" style="text-align: left;border-top: 1px solid #ccc;">
+                <li>
+                    <h2>Students</h2>
+                </li>
+            </ul>
+            <ul class="small-block-grid-2" style="text-align: left">
+                 {{#each app.children}}
+                <li>
+                    <b>{{child_fn}} {{child_mi}} {{child_ln}}</b><br>
+                    {{#if_eq child_foster "Y"}}
+                    Foster Child<br>
+                    {{/if_eq}}
+                    {{#each child_other}}
+                    {{this}}<br>
+                    {{/each}}
+                    Total Monthly Income: ${{income_tot}}
+                </li>
+                 {{/each}}
+            </ul>
+            {{#if app.nostudent_children}}
+            <ul class="small-block-grid-1" style="text-align: left;border-top: 1px solid #ccc;">
+                <li>
+                    <h2>Additional Children</h2>
+                </li>
+            </ul>
+            <ul class="small-block-grid-2" style="text-align: left">
+                 {{#each app.nostudent_children}}
+                <li>
+                   <b>{{other_fn}} {{other_mi}} {{other_ln}}</b><br>
+                    Total Monthly Income: ${{income_tot}}
+                </li>
+                 {{/each}}
+            </ul>
+            {{/if}}
+            {{#if app.adults.adults}}
+            <ul class="small-block-grid-1" style="text-align: left;border-top: 1px solid #ccc;">
+                <li>
+                    <h2>Adults</h2>
+                </li>
+            </ul>
+            <ul class="small-block-grid-2" style="text-align: left">
+                 {{#each app.adults.adults}}
+                <li>
+                   <b>{{adult_fn}} {{adult_mi}} {{adult_ln}}</b><br>
+                    Total Monthly Income: ${{income_tot}}
+                </li>
+                 {{/each}}
+            </ul>
+            <ul class="small-block-grid-1" style="text-align: left">
+                <li>
+              {{#if app.adults.adult_ss}}Last four digits of Social Security Number (SSN) of Primary Wage Earner or Other Household Adult: <b>XXX-XX-{{app.adults.adult_ss}}</b>{{/if}}
+                </li>
+            </ul>
+            {{/if}}
+            <ul class="small-block-grid-1" style="text-align: left;border-top: 1px solid #ccc;">
+                 <li>
+                     {{#if_eq app.hhincome 0}}
+                     No Monthly Income Reported.
+                     {{else}}
+                     <b>Total Reported Monthly Household Income:&nbsp;</b>${{app.hhincome}}
+                     {{/if_eq}}
+                 </li>
+             </ul>
+            {{#if app.program_set.pgm_case_num}}
+            <ul class="small-block-grid-1" style="text-align: left;border-top: 1px solid #ccc;">
+                 <li>
+                    <b>Household Program Participation:</b> {{#each app.program_set.program}} {{this}}&nbsp;{{/each}} Case Number: {{app.program_set.pgm_case_num}}
+                 </li>
+             </ul>
+            {{/if}}
+            <ul class="small-block-grid-1" style="text-align: left;border-top: 1px solid #ccc;">
+                <li>
+                    <h2>Contact Information</h2>
+                </li>
+                <li>
+                    {{app.contact.contact_fn}} {{app.contact.contact_mi}} {{app.contact.contact_ln}}<br>
+                    {{#if app.contact.contact_address}}{{app.contact.contact_address}}<br>{{/if}}
+                    {{#if app.contact.contact_city}}{{app.contact.contact_city}}{{/if}}{{#if app.contact.contact_state}}{{#if app.contact.contact_city}}, {{/if}}{{app.contact.contact_state}}{{/if}}  {{app.contact.contact_zipcode}}<br>
+                    {{#if app.contact.contact_phone}}<strong>Phone:</strong> {{app.contact.contact_phone}}<br>{{/if}}
+                    {{#if app.contact.contact_email}}<strong>Email:</strong> {{app.contact.contact_email}}<br>{{/if}}
+                    {{#if app.contact.contact_ln}}<strong>Preferred Method of Contact:</strong> {{#if_eq app.contact.contact_method "Y"}}Email{{else}}Mail{{/if_eq}}{{/if}}
+                </li>
+                {{#if app.contact.latino }}
+                <li>
+                    Optional ethnicity information on children: {{#each app.contact.latino}} {{this}};&nbsp;{{/each}}
+                </li>
+                {{/if}}
+                {{#if app.contact.race }}
+                <li>
+                    Optional race information on children: {{#each app.contact.race}} {{this}};&nbsp;{{/each}}
+                </li>
+                {{/if}}
+            </ul>
+            <ul class="small-block-grid-1" style="text-align: left;border-top: 1px solid #ccc;">
+                <li>
+                   <h2>Attesting Statement</h2>
+                </li>
+                <li>
+                    The person signing is furnishing true information and to advise that person that the application is being made in connection with the receipt of Federal funds;<br><br> School officials may verify the information on the application; and<br><br> Deliberate misrepresentation of the information may subject the applicant to prosecution under State and Federal statutes.<br><br>
+                    <div class="row">
+                        <div class="small-12 medium-6 large-6 columns">
+                            <div class="field">
+                                  <input class="validate qsection12" data-rule-required="true" placeholder="Electronic Signature" type="text" name="contact_signature">
+                            </div>
+                        </div>
+                        <div class="small-12 medium-6 large-6 columns">
+                                <div class="field">
+                                  <input class="validate qsection12" data-rule-required="true" data-rule-date="true" placeholder="{{apptoday}}" type="text" name="app_date" value="{{apptoday}}">
+                                </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+</script>
+{% endraw %}
+
+<div class="large-9 large-push-3 medium-8 medium-push-4 columns">
+    <div class="right-content">
+        <div id="appform">
+                <ol>
+                    <form id="form1" action="#">
+                        <li class="pm-step section1 intro activeques">
+                            <div class="small-12 medium-10 large-10 small-centered columns">
+                            <h1 class="text-center">Students</h1>
+                            <h4 class="text-center">First we will ask about the students in your household. They are the ones that would potentially receive free or reduced price school meals.</h4>
+                            <hr>                            
+                            <div class="slpnavigator">
+                              <input type="button" class="round button sectionstartfwd nextQuestion" style="padding-left:6%;padding-right:6%;" value="ADD STUDENTS">
+                            </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="small-12 medium-11 large-11 small-centered columns">
+
+                                </div>
+                            </div>
+
+
+                        </li>
+                        <li class="pm-step section1 qsection1 child1">
+                            <h1>Add the First Student You are Applying For</h1>
+                            <h4>Students are those in grades pre-kindergarten through grade 12. <span data-tooltip="" aria-haspopup="true" class="has-tip" title="Only add students who attend AnyTown Public School District schools. Later you will be able to add other children, such as children who are too young to attend school and children who attend school in another district."><i class="fa fa-info-circle"></i></span></h4>
+                            <br>
+                            <div class="row">
+                                <div class="small-12 medium-10 large-10 small-centered columns">
+                                  <div class="small-12 medium-6 large-6 columns">
+                                    <div class="field">
+                                      <input class="childfname validate qsection1" placeholder="Student First Name" type="text" name="child_fn[1]">
+                                    </div>
+                                   </div> 
+                                  <div class="small-12 medium-6 large-6 columns">                                   
+                                    <div class="field">
+                                     <input class="childmi" nameplaceholder="Student Middle Initial (optional)" data-rule-maxlength="1" data-msg-maxlength="One letter only" type="text" name="child_mi[1]">
+                                    </div>
+                                  </div>
+                                  <div class="small-12 columns">                                    
+                                        <div class="field">
+                                          <input class="childlname validate qsection1" placeholder="Student Last Name" type="text" name="child_ln[1]">
+                                        </div>
+                                  </div>
+                                </div>  
+                            </div>
+                            <hr>
+                          <div class="slpnavigator">
+                            <input type="button" class="round button childgotonext nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                          </div>
+                        </li>
+                        <li class="pm-step section1 qsection2 child1">
+                                  <h1>Is <span class="childfirstname"></span> a Foster Child?</h1>
+                                  <h4>A foster child is a child who is formally placed by a court or a state child welfare agency. Any students who are foster children can get free school meals.<span data-tooltip aria-haspopup="true" class="has-tip" title="Your student's school or school district may follow up with you to confirm the student's foster care status. Click the ? button in the top right corner for information about these statuses.
+"><i class="fa fa-info-circle"></i></span></h4><br>
+                                            <ul style="max-width:400px;margin-left:auto;margin-right:auto;" class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
+                                                <li>
+                                                     <div class="field radiobutton">
+                                                    <input type="radio" class="foster validate qsection2 ignore" name="child_foster[1]" value="Y" id="yes">
+                                                    <label for="yes" class="rbox">Yes</label>
+                                                     </div>
+                                                </li>
+                                                <li>
+                                                    <div class="field radiobutton">
+                                                        <input type="radio" class="foster validate qsection2 ignore" name="child_foster[1]" value="N" id="no">
+                                                        <label for="no" class="rbox">No</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                <hr>
+                                 <div class="slpnavigator">
+                                    <input type="button" class="round button childgotoback" value="< BACK">
+                                    <input type="button" class="round button childgotonext nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                                </div>
+                        </li>
+                        <li class="pm-step section1 qsection3 child1">
+                                  <h1>Is <span class="childfirstname"></span> Any of the Below? </h1>
+                                  <h3>If no, please press the "CONTINUE" button.</h3>
+                                  <h4>Any students with one or more of the statuses below can get free school meals. <span data-tooltip aria-haspopup="true" class="has-tip" title="Your student's school or school district may follow up with you to confirm these. Click the ? button in the top right corner for information about these statuses."><i class="fa fa-info-circle"></i></span></h4><br>
+                                   <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">
+                                       <li>
+                                           <div class="field checkbox">
+                                               <input class="qsection3 ignore check-hidden" type="checkbox" name="child_other[1]" value="Homeless" id="homeless">
+                                               <label class="cbox" for="homeless"><span data-tooltip aria-haspopup="true" class="has-tip" title="A child identified by school officials or a local homeless shelter as not having a fixed, regular, and adequate place to sleep."><i class="fa fa-info-circle"></i></span> Homeless</label>
+                                           </div>
+                                       </li>
+                                       <li>
+                                           <div class="field checkbox">
+                                               <input class="qsection3 ignore check-hidden" type="checkbox" name="child_other[1]" value="Migrant" id="migrant">
+                                               <label class="cbox" for="migrant"><span data-tooltip aria-haspopup="true" class="has-tip" title="A child identified as a migrant by a Migrant Education Program coordinator, school officials, or by the Food and Nutrition Service (FNS)."><i class="fa fa-info-circle"></i></span> Migrant</label>
+                                           </div>
+                                       </li>
+                                       <li>
+                                           <div class="field checkbox">
+                                               <input class="qsection3 ignore check-hidden" type="checkbox" name="child_other[1]" value="Runaway" id="runaway">
+                                               <label class="cbox" for="runaway"><span data-tooltip aria-haspopup="true" class="has-tip" title="A child identified as a runaway by school officials, or is receiving services from a Runaway and Homeless Youth Act program."><i class="fa fa-info-circle"></i></span> Runaway</label>
+                                           </div>
+                                       </li>
+                                       <li>
+                                           <div class="field checkbox">
+                                               <input class="qsection3 ignore check-hidden" type="checkbox" name="child_other[1]" value="Headstart" id="headstart">
+                                               <label class="cbox" for="headstart"><span data-tooltip aria-haspopup="true" class="has-tip" title="A child in a Head Start program."><i class="fa fa-info-circle"></i></span> Head Start</label
+                                           </div>
+                                       </li>
+                                   </ul>
+                                <hr>
+                                <div class="slpnavigator">
+                                    <input type="button" class="round button childgotoback" value="< BACK">
+                                    <input type="button" class="round button endchild" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                                </div>
+                        </li>
+                        <li class="pm-step section1" id="childdash">
+                            <div class="callout child success" data-closable><h4><span class="childfirstname"></span> Has Been Added to the Application</h4><button class="close-button child" aria-label="Close alert" type="button">
+                              <span aria-hidden="true">&times;</span>
+                            </button></div>
+                            <h1>Any Other Students also Applying?</h1>
+                            <h4>Please add all students in your household who go to schools in this school district.</h4>
+                            <br>
+                            <div class="row addchild" style="margin-top: 30px">
+                                  <div class="small-12 columns">
+                                        <div class="field">
+                                          <input type="button" class="round button" id="add_child" value="+ ADD ANOTHER STUDENT">
+                                        </div>
+                                  </div>
+                            </div>
+                            <hr>
+                                <input type="button" id="finishchild" class="round button" value="FINISHED ADDING STUDENTS"> &nbsp;&nbsp;&nbsp;
+                        </li>
+                        <li class="pm-step section2 intro">
+                            <h1>Other Benefits Programs</h1>
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <h4 class="text-center">Next we will ask you if anyone in the household participates in other benefits programs. Participating in certain benefits programs makes all students in the household eligible to get free school meals.</h4>
+                                </div>
+                            </div>
+                            <hr>
+                          <div class="slpnavigator">
+                            <input type="button" id="gotochilddash" class="round button" value="< BACK">
+                            <input type="button" class="round button sectionstartfwd nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                          </div>
+                        </li>
+                        <li class="pm-step section2 qsection4">
+                                <h1>Does anyone in the household participate in one or more of the benefits programs below?</h1>
+                                <h3>If no, please press the "CONTINUE" button.</h3>
+                                <h4>Someone in the household participating in one or more of the below means all students in your household can get free school meals. If yes, please select a program and provide a case number if there is one. <span data-tooltip aria-haspopup="true" class="has-tip" title="Providing just one program below is enough if your household participates in more than one program."><i class="fa fa-info-circle"></i></span></h4>
+                                <div class="row">
+                                     <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
+                                           <li>
+                                               <div class="field checkbox">
+                                                   <input class="qsection4 ignore" type="checkbox" name="program" value="SNAP" id="snap"> 
+                                                   <label class="cbox" for="snap"><span data-tooltip aria-haspopup="true" class="has-tip" title="The Supplemental Nutrition Assistance Program (SNAP) helps eligible low-income individuals and families be able to buy enough food to maintain good health."><i class="fa fa-info-circle"></i></span> SNAP</label>
+                                               </div>
+                                           </li>
+                                           <li>
+                                               <div class="field checkbox">
+                                                   <input class="qsection4 ignore" type="checkbox" name="program" value="TANF" id="tanf"> 
+                                                   <label class="cbox" for="tanf"><span data-tooltip aria-haspopup="true" class="has-tip" title="The Temporary Assistance to Needy Families (TANF) program gives cash assistance to eligible low-income families."><i class="fa fa-info-circle"></i></span> TANF</label>
+                                               </div>
+                                           </li>
+                                           <li>
+                                               <div class="field checkbox">
+                                                   <input class="qsection4 ignore" type="checkbox" name="program" value="FDPIR" id="fdpir"> 
+                                                   <label class="cbox" for="fdpir"><span data-tooltip aria-haspopup="true" class="has-tip" title="The Food Distribution Program on Indian Reservations (FDPIR) gives food to eligible Native American/American Indian individuals and families living on Indian reservations or in other FDPIR-approved areas."><i class="fa fa-info-circle"></i></span> FDPIR</label>
+                                               </div>
+                                           </li>
+                                     </ul>
+                                </div>
+                                <hr>
+                                 <div class="slpnavigator">
+                                    <input type="button" class="round button sectionstartback" value="< BACK">
+                                    <input type="button" id="otherprograms" class="round button" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                                </div>
+                        </li>
+                        <li class="pm-step section3 intro">
+                            <h1>Adults and Adult Income</h1>
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <h4>Next we will ask you about any adults in the household and the income they have. </h4>
+                                </div>
+                            </div>
+                            <hr>
+                          <div class="slpnavigator">
+                            <input type="button" class="round button gotohhprograms" value="< BACK">
+                            <input type="button" class="round button sectionstartfwd nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                          </div>
+                        </li>
+                        <li class="pm-step section3" id="adultdash">                      
+                            <h1>Adults in the Household</h1>
+                            <h4>Please add anyone 18 years or older in your household. If you added a student that is 18 years or older already, do not add that student again here.</h4><br>
+
+                            <div class="row addadult" style="margin-top:30px;">
+                                <div class="small-12 columns">
+                                        <div class="field">
+                                          <input type="button" class="round button" id="add_adult" value="+ ADD ADULT">
+                                        </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div id="noadults">
+                                <input class="ignore" id="noadultschecked" type="checkbox" name="noadults" value="N"> <label for="noadults">There are no adults - I am an emancipated minor.</label><span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="An emancipated minor is a child (under 18 years old) that is legally independent from his/her parents or guardians."><i class="fa fa-info-circle"></i></span><br>
+                                <input type="button" class="round button sectionstartback" value="< BACK">
+                            </div>
+                            <div id="finishadults">
+                                <input type="button" class="round button sectionstartback" value="< BACK">
+                                <input type="button" id="finishadult" class="round button" value="FINISHED ADDING ADULTS"> &nbsp;&nbsp;&nbsp;
+                            </div>
+                        </li>
+                        <li class="pm-step section3 qsection7" id="adultss">
+                            <h1>Social Security Number Information</h1>
+                            <h4>Please provide the last 4 digits of your Social Security Number. If you do not have a Social Security Number, you can provide the last 4 digits of the Social Security Number of another adult in the household or check the box below.<span data-tooltip aria-haspopup="true" class="has-tip" title="A social security number is a 9 digit number provided by the U.S. government. If you or no other adults in your household have one, that will not prevent the students in your household from getting free or reduced price school meals."><i class="fa fa-info-circle"></i></span></h4><br>
+                            <div class="row">
+                                <div class="small-8 small-centered columns">
+                                    <div class="field">
+                                      <input class="validate qsection7 ignore" placeholder="Last 4 digits" type="text" id="adult_ss" name="adult_ss">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <div class="field">
+                                      <input class="ignore" id="noadultsscheckmark" type="checkbox" name="noadultss" value="Y"> <label for="noadults">No Adults in the household have a Social Security Number.</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div>
+                                <input type="button" class="round button gotoadultdash" value="< BACK">
+                                <input type="button" class="round button gotootherchilddash" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                            </div>
+                        </li>
+                        <li class="pm-step section4 intro">
+                            <h1>Other Children and Child Income</h1>
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <h4>Next we will ask you about any other children in the household that are not students. Then we will ask about any income that both students and other children in the household have.</h4>
+                                </div>
+                            </div>
+                            <hr>
+                          <div class="slpnavigator">
+                            <input type="button" class="round button gotoadultss" value="< BACK">
+                            <input type="button" class="round button sectionstartfwd nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                          </div>
+                        </li>
+                        <li class="pm-step section4" id="otherchildrendash">
+                            <h1>Other Children in the Household</h1>
+                            <h4>Please add any other children (less than 18 years old) in the household who are not students or are students in other school districts. If you added a child as a student already, do not add that student again here.</h4><br>
+
+                            <div class="row addotherchild" style="margin-top: 30px">
+                                <div class="small-12 columns">
+                                        <div class="field">
+                                          <input type="button" class="round button" id="add_otherchildren" value="+ ADD CHILDREN">
+                                        </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div id="nootherchildren">
+                                <input id="finishchildrenincome" class="finishchildrenincome ignore" type="checkbox" name="nootherchildren" value="N"> <label for="nootherchildren">There are no other children in the household.</label>&nbsp;
+                                <input type="button" class="round button sectionstartback" value="< BACK">
+                            </div>
+                            <div id="finishedotherchildren">
+                                <input type="button" class="round button sectionstartback" value="< BACK">
+                                <input type="button"  class="round button finishchildrenincome" value="FINISHED ADDING OTHER CHILDREN"> &nbsp;&nbsp;&nbsp;
+                            </div>
+                        </li>
+                        <li class="pm-step section4" id="childrenincome">
+                            <h1>Do any students or other children have income?</h1>
+                            <h4>Click "set income" below to add income for any student or other child</h4>
+                                <div id="bottomincome" style="margin-top: 15px"></div>
+                                <div class="slpnavigator">
+                                    <input type="button" class="round button gobacktootherchilddash" value="< BACK">
+                                    <input type="button" class="round button finishchildren nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                                </div>
+                        </li>
+                        <li class="pm-step section5 intro">
+                            <h1>Provide Contact Details</h1>
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <h4>Next we'll ask for the best ways to contact you plus a few more questions to finish your application.</h4>
+                                </div>
+                            </div>
+                            <hr>
+                          <div class="slpnavigator">
+                            <input type="button" class="round button gobacktochildrenincome" value="< BACK">
+                            <input type="button" class="round button sectionstartfwd nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                          </div>
+                        </li>
+                        <li class="pm-step section5 qsection9">
+                            <h1>Please Provide Your Contact Details</h1>
+                            <h4>Your contact information will help the school or school district using this application get in touch with you. You are not required to provide all of the contact details below.</h4><br>
+                                <div class="row">
+                                  <div class="small-12 medium-10 large-10 small-centered columns">  
+                                      <div class="small-12 medium-6 large-6 columns">
+                                            <div class="field">
+                                                <input class="contactfname  validate qsection9 ignore" id="contact_fn" placeholder="Contact First Name" type="text" name="contact_fn">
+                                            </div>
+                                       </div>   
+                                      <div class="small-12 medium-6 large-6 columns">
+                                            <div class="field">
+                                                <input placeholder="Contact Middle Initial (optional)" data-rule-maxlength="1" data-msg-maxlength="One letter only" type="text" name="contact_mi">
+                                            </div>
+                                      </div>      
+                                      <div class="small-12 columns">                                        
+                                            <div class="field">
+                                                <input class="contactlname validate qsection9 ignore" id="contact_ln" placeholder="Contact Last Name" type="text" name="contact_ln">
+                                            </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                      <div class="small-12 medium-10 large-10 small-centered columns">
+                                          <div class="small-12 columns">
+                                              <div class="field">
+                                                <input class="validate qsection9 ignore" placeholder="Street Address (optiona)" type="text" name="contact_address">
+                                              </div>
+                                           </div>
+                                           <div class="small-12 medium-6 large-6 columns">
+                                              <div class="field">
+                                                <input class="validate qsection9 ignore" placeholder="City" type="text" name="contact_city">
+                                              </div>
+                                            </div>
+                                            <div class="small-12 medium-4 large-4 columns">
+                                              <div class="field">
+                                                  <select class="validate qsection9 ignore" name="contact_state">
+                                                        <option value="" disabled selected>Select State</option>
+                                                        <option value="AL">Alabama</option>
+                                                        <option value="AK">Alaska</option>
+                                                        <option value="AZ">Arizona</option>
+                                                        <option value="AR">Arkansas</option>
+                                                        <option value="CA">California</option>
+                                                        <option value="CO">Colorado</option>
+                                                        <option value="CT">Connecticut</option>
+                                                        <option value="DE">Delaware</option>
+                                                        <option value="FL">Florida</option>
+                                                        <option value="GA">Georgia</option>
+                                                        <option value="HI">Hawaii</option>
+                                                        <option value="ID">Idaho</option>
+                                                        <option value="IL">Illinois</option>
+                                                        <option value="IN">Indiana</option>
+                                                        <option value="IA">Iowa</option>
+                                                        <option value="KS">Kansas</option>
+                                                        <option value="KY">Kentucky</option>
+                                                        <option value="LA">Louisiana</option>
+                                                        <option value="ME">Maine</option>
+                                                        <option value="MD">Maryland</option>
+                                                        <option value="MA">Massachusetts</option>
+                                                        <option value="MI">Michigan</option>
+                                                        <option value="MN">Minnesota</option>
+                                                        <option value="MS">Mississippi</option>
+                                                        <option value="MO">Missouri</option>
+                                                        <option value="MT">Montana</option>
+                                                        <option value="NE">Nebraska</option>
+                                                        <option value="NV">Nevada</option>
+                                                        <option value="NH">New Hampshire</option>
+                                                        <option value="NJ">New Jersey</option>
+                                                        <option value="NM">New Mexico</option>
+                                                        <option value="NY">New York</option>
+                                                        <option value="NC">North Carolina</option>
+                                                        <option value="ND">North Dakota</option>
+                                                        <option value="OH">Ohio</option>
+                                                        <option value="OK">Oklahoma</option>
+                                                        <option value="OR">Oregon</option>
+                                                        <option value="PA">Pennsylvania</option>
+                                                        <option value="RI">Rhode Island</option>
+                                                        <option value="SC">South Carolina</option>
+                                                        <option value="SD">South Dakota</option>
+                                                        <option value="TN">Tennessee</option>
+                                                        <option value="TX">Texas</option>
+                                                        <option value="UT">Utah</option>
+                                                        <option value="VT">Vermont</option>
+                                                        <option value="VA">Virginia</option>
+                                                        <option value="WA">Washington</option>
+                                                        <option value="DC">Washington, DC</option>
+                                                        <option value="WV">West Virginia</option>
+                                                        <option value="WI">Wisconsin</option>
+                                                        <option value="WY">Wyoming</option>
+                                                  </select>
+                                              </div>
+                                            </div>
+                                            <div class="small-12 medium-2 large-2 columns">
+                                              <div class="field">
+                                                    <input class="validate qsection9 ignore" placeholder="ZipCode" type="text" name="contact_zipcode">
+                                              </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="small-12 medium-10 large-10 small-centered columns">
+                                        <div class="small-12 medium-6 large-6 columns">
+                                            <div class="field">
+                                                <input class="validate qsection9 ignore" placeholder="Area Code and Phone Number {optional}" data-rule-phoneUS="true" data-msg-phoneUS="Provide valid phone number with area code" type="text" name="contact_phone">
+                                            </div>
+                                        </div>
+                                        <div class="small-12 medium-6 large-6 columns">
+                                            <div class="field">
+                                                <input class="validate qsection9 ignore" placeholder="someone@email.com {optional}" data-rule-email="true" data-msg-email="Provide valid email address" type="text" name="contact_email">
+                                            </div>
+                                        </div>
+                                        <div class="small-12 medium-6 large-6 columns">
+                                            <div class="field">
+                                                <input class="ignore" id="contact_method" type="checkbox" name="contact_method" value="Y"> <label for="contact_method">I prefer to be contacted via email</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="slpnavigator">
+                                    <input type="button" class="round button sectionstartback" value="< BACK">
+                                    <input type="button" class="round button contactgotonext nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                                </div>
+                        </li>
+                        <li class="pm-step section5 qsection10">
+                            <h1>OPTIONAL: Children’s Racial &amp; Ethnic Identities</h1>
+                            <h4 style="margin-bottom: 15px">We are required to ask for information about your children's race and ethnicity. This information is important and helps to make sure we are fully serving our community. Responding to this section is optional and does not affect your children's eligibility for free or reduced price meals.<span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="You are not required to give an answer."><i class="fa fa-info-circle"></i></span></h4>
+
+                                <div class="row" style="text-align: left">
+                                    <ul style="max-width:670px;margin:0 auto;" class="small-block-grid-2">
+                                        <li>
+                                            <div class="field">
+                                                <b>Ethnicity (check one)</b>
+                                           </div>
+                                            <div class="field">
+                                                <input class="qsection10 ignore" type="checkbox" name="latino" value="Hispanic or Latino">&nbsp;&nbsp;Hispanic or Latino
+                                            </div>
+                                            <div class="field">
+                                                <input class="qsection10 ignore" type="checkbox" name="latino" value="Not Hispanic or Latino">&nbsp;&nbsp;Not Hispanic or Latino
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="field">
+                                                <b>Race (check one or more)</b>
+                                             </div>
+                                             <div class="field">
+                                                <input class="qsection10 ignore" type="checkbox" name="race" value="American Indian or Alaskan Native">&nbsp;&nbsp;American Indian or Alaskan Native
+                                             </div>
+                                             <div class="field">
+                                                <input class="qsection10 ignore" type="checkbox" name="race" value="Asian">&nbsp;&nbsp;Asian
+                                             </div>
+                                             <div class="field">
+                                                <input class="qsection10 ignore" type="checkbox" name="race" value="Black or African American">&nbsp;&nbsp;Black or African American
+                                             </div>
+                                             <div class="field">
+                                                <input class="qsection10 ignore" type="checkbox" name="race" value="Native Hawaiian or Other Pacific Islander">&nbsp;&nbsp;Native Hawaiian or Other Pacific Islander
+                                             </div>
+                                             <div class="field">
+                                                <input class="qsection10 ignore" type="checkbox" name="race" value="White">&nbsp;&nbsp;White
+                                             </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="slpnavigator">
+                                    <input type="button" class="round button contactgotoback" value="< BACK">
+                                    <input type="button" class="round button contactgotonext nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                                </div>
+                        </li>
+                        <li class="pm-step section6 qsection11">
+                            <h1>Legal Statements</h1>
+                            <h4>Please review the statements below</h4>   
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <div class="field">
+                                            <div class="panel" style="padding: 1.9rem;">
+                                                <h4><strong>USDA Non-Discrimination Statement</strong></h4>
+<p>In accordance with Federal civil rights law and U.S. Department of Agriculture (USDA) civil rights regulations and policies, the USDA, its Agencies, offices, and employees, and institutions participating in or administering USDA programs are prohibited from discriminating based on race,
+color, national origin, sex, disability, age, or reprisal or retaliation for prior civil rights activity in any program or activity conducted or funded by USDA.</p>
+<p>Persons with disabilities who require alternative means of communication for program information (e.g. Braille, large print, audiotape, American Sign Language, etc.), should contact the Agency (State or local) where they applied for benefits. Individuals who are deaf, hard of hearing or have speech disabilities may contact USDA through the Federal Relay Service at (800) 877-8339. Additionally, program information may be made available in languages other than English.</p>
+<p>To file a program complaint of discrimination, complete the USDA Program Discrimination Complaint Form, (AD-3027) found online at: http://www.ascr.usda.gov/complaint_filing_cust.html, and at any USDA office, or write a letter addressed to USDA and provide in the letter all of the information requested in the form. To request a copy of the complaint form, call (866) 632-9992. Submit your completed form or letter to USDA by:</p>
+<p>(1) Mail: U.S. Department of Agriculture<br>
+Office of the Assistant Secretary for Civil Rights 1400 Independence Avenue, SW
+Washington, D.C. 20250-9410;
+(2) Fax: (202) 690-7442; or<br>
+(3) Email: program.intake@usda.gov.</p>
+                                                <h4><strong>Use of Information Statement</strong></h4>
+<p>“The Richard B. Russell National School Lunch Act requires the information on this application. You do not have to give the information, but if you do not submit all needed information, we cannot approve your child for free or reduced price meals. You must include the last four digits of the social security number of the adult household member who signs the application. The social security number is not required when you apply on behalf of a foster child or you list a Supplemental Nutrition Assistance Program (SNAP), Temporary Assistance for Needy Families (TANF) Program or Food Distribution Program on Indian Reservations (FDPIR) case number or other FDPIR identifier for your child or when you indicate that the adult household member signing the application does not have a social security number. We will use your information to determine if your child is eligible for free or reduced price meals, and for administration and enforcement of the lunch and breakfast programs.</p>
+
+<p>We may share your eligibility information with education, health, and nutrition programs to help them evaluate, fund, or determine benefits for their programs, auditors for program reviews, and law enforcement officials to help them look into violations of program rules.”</p>
+
+
+                                            </div>                                             
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="slpnavigator">
+                                    <input type="button" class="round button contactgotoback" value="< BACK">
+                                    <input type="button" id="submitslp" class="round button nextQuestion" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
+                                </div>
+                        </li>
+                        <li class="pm-step section7 qsection12">
+                            <h1>Please review your application details</h1>
+
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <div class="field">
+                                            <div class="panel" id="appsummary" style="padding: 1.9rem;padding-top:0px;border-top:6px solid #999;">
+                                                [Application summary will go here]
+
+                                            </div>                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="slpnavigator">
+                                    <input type="button" class="round button contactgotoback" value="< BACK">
+                                    <input type="button"  class="round button contactgotonext nextQuestion" value="SUBMIT"> &nbsp;&nbsp;&nbsp;
+                                </div>
+                        </li>
+                        <li class="pm-step section7 qsection13">
+                            <h1>Thank you for your application!</h1>
+                            <h4>You will hear back about your application soon. If you have any questions about your application, call or email the school or school district.</h4><br><br>
+
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <h4><b>The information below reprresents the JSON data object generated by this application which contains all pertinent application data. This dataset can be exported or sent to
+                                            any backend data repository for persistent data storage.</b>
+                                        </h4>
+                                        <div class="field" id="outputjson" style="text-align: left">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="slpnavigator">
+                                    <input type="button" class="round button contactgotoback" value="< BACK">
+                                </div>
+                        </li>
+                    </form>
+            </ol>
+          </div>
+    </div>
+</div>

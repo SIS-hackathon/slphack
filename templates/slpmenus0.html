@@ -1,8 +1,12 @@
+<!--  SLPAPP's slpmenus0.html
+* Copyright (c) 2016 The Center to Promote Healtcare Access, Inc., DBA Social Interest Solutions
+* Licensed under MIT License (https://github.com/SIS-hackathon/slphack/LICENSE)  -->
+
 <div class="fixed">
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">School Lunch Program Application</a></h1>
+      <h1><a href="#"><img src="static/img/school-logo.png" alt="San Francisco Unified School District"></a></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -11,27 +15,43 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class="has-dropdown">
-        <a href="#">ENGLISH</a>
+      <li class="has-dropdown">    
+        <a href="#">LANGUAGES</a>
+        <ul class="dropdown languages">
+          <li>English</li>
+          <li>Spanish</li>
+          <li>Chinese</li>
+          <li>Vietnamese</li>
+          <li>Tagalog</li>
+          <li>Russian</li>
+          <li>Arabic</li>
+        </ul>
       </li>
       <li class="has-dropdown">
         <a href="#" class="help"><span>?</span></a>
-         <ul class="dropdown">
-          <li class="help-heading"><span>HELP</span><i class="fi-x right"></i></li>
-          <li class="top-questions"><h6>TOP QUESTIONS</h6>
+         <ul id="help-dropdown" class="dropdown" data-dropdown-content>
+          <div id="helpcontainer">
+          <li class="help-heading"><h3><strong><span>Common Questions</span></strong><!-- <i class="fi-x right"></i> --></h3></li>
+          <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
             <p>
-                <span class="q1">Who can I look for benefits for?</span><br>
-                <span class="a1">You can look for benefits for people who live with you and/or those who
-                  are included in your yearly tax return if you submit one.<br><span class="a-more">More</span></span>
+                <span class="q1">Do I need to fill out an application for each child?</span><br>
+                <span class="a1">No, please complete only one application. This application will cover all students in your household who go to schools in this school district. You can complete the application here online, or you can complete a paper version provided by your students' school or school district.<br></span>
             </p>
-              <p><span class="q2">What if I am unsure about whether I want to look for benefits for someone?</span><br>
-                <span class="a2">Don't worry, we will help determine if you can't look for benefits for someone you add. It is better to add someone you think you might be able to look for benefits for than to leave the person out and potentially lose out on benefits for that person.<br><span class="a-more">More</span></span></p>
-              <p><span class="q3">What do I need to know about each person?</span><br>
-                <span class="a3">At minimum, you will need to know the person's first name, birthday (or close to it so we can get this person's age), gender, and whether or not that person is pregnant. It will also be helpful if you have basic information about that person's jobs and income, expenses, and dependents. The more information you provide, the more accurate our recommendations at the end will be, but don't worry if you don't know all of this information for everyone.<br><span class="a-more">More</span></span></p>
+              <p><span class="q2">Who can get free and reduced price school meals?</span><br>
+                <span class="a2">Students in grades pre-kindergarten through grade 12 who live in a household with income below 130% of the federal poverty level, who are foster children who are formally placed by a court or a state child welfare agency, who meet the definition of homeless, runaway, or migrant, who participate in Head Start, or who live in a household where any family members receive SNAP, TANF, or FDPIR can get free school meals. Students who live in a household with income between 185% and 130% of the federal poverty level can get reduced price school meals.<br></span></p>
+              <p><span class="q3"> I applied last school year. Do I need to apply again?</span><br>
+                <span class="a3">Yes. Your student’s application is only good for that school year and for the first few days of this school year. You have to send in a new application unless the school already told you that your child is able to get free or reduced-price school meals for this school year.<br></span></p>
+              <p><span class="q4">Will the information I give be checked?</span><br>
+                <span class="a4">Yes, and your school may follow up with you to confirm information after they get your application.<br></span></p>
+             <p><span class="q5">Can I apply if someone in my household is not a U.S. citizen?</span><br>
+                <span class="a5">Yes. You or your students do not have to be U.S. citizens to get free or reduced-price school meals.<br></span></p>
+              <p><span class="q6">Who can I get in touch with if I have questions or need help? </span><br>
+                <span class="a6"> If you have questions or need help with this application, call or email your student’s school.<br></span></p>
           </li>
           <li class="has-form">
             <input id="helpsearch" class="foundicon-search" type="text" placeholder="">
           </li>
+        </div>
         </ul>
       </li>
     </ul>
