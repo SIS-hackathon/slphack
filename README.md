@@ -32,7 +32,7 @@ The main Web application components are the following html pages:
 - slpmenus.html (menu components of application page)<br>
 - header.html (a list of supporting .css and .js libraries used by the application)<br>
 - footer.html (html container for footer info)<br>
-- slphack.py (main python file providing http handlers for the Web server)
+- slphack.py (main Flask python file providing URL handlers for the Web server)
 
 Form navigation logic for the application is contained in the <b>slpformlogic.js</b> file located in the /static/js/sis directory.
 
