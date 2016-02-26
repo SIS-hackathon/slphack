@@ -40,5 +40,6 @@ As required, all html form fields can have data validation rules assigned to the
 be sent to a back-end data repository using AJAX or some other data interface option.
 
 - slphack.py (main Flask python file providing URL handlers for the Web server)
+Note: to execute the Flask slphack.py script it is assumed that a Flask instance has been configured and integrated with a Web server, such as Apache, supporting the WSGI standard.
 
 
