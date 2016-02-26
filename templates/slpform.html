@@ -1,4 +1,4 @@
-<!--  SLPAPP's slpform.html
+<!--  SLPHACKS's slpform.html
 * Copyright (c) 2016 The Center to Promote Healtcare Access, Inc., DBA Social Interest Solutions
 * Licensed under MIT License (https://github.com/SIS-hackathon/slphack/LICENSE)  -->
 
@@ -1357,6 +1357,15 @@ Washington, D.C. 20250-9410;
                         </li>
                     </form>
             </ol>
+
+            <!-- Reveal Modals begin -->
+            <div id="adultincomeModal" class="reveal-modal" data-reveal>
+              <h2 id="firstModalTitle">Does <span class="adultfirstname"></span> have any income?</h2>
+              <p>Remember, you should include earnings from work, public assistance, child support, alimony, pensions, retirement, and other sources. Payments for foster care children and some military pay do not need to be included.</p>
+              <p><div style="text-align:right"><a href="#" id="noincome" class="secondary button">No Income</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="yesincome" class="secondary button">+ Add Income</a></div></p>
+                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+            </div>
+
           </div>
     </div>
 </div>

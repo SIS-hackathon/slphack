@@ -1,5 +1,5 @@
 /*!
-* SLPAPP's slpformlogic.js
+* SLPHACK's slpformlogic.js
 * Copyright (c) 2016 The Center to Promote Healtcare Access, Inc., DBA Social Interest Solutions
 * Licensed under MIT License (https://github.com/SIS-hackathon/slphack/LICENSE)
 */
@@ -46,7 +46,6 @@
        return xxx;
     }
 
-    $(document).foundation();
     $(document).ready(function() {
 
         var help0_source   = $("#help-section0").html();
@@ -115,7 +114,6 @@
         var appsummary_template = Handlebars.compile(appsummary_source);
         $('#footer').hide();
         childincomeid.push(0);
-
         Handlebars.registerHelper('if_eq', function(a, b, opts) {
             if(a == b)
                 return opts.fn(this);
@@ -425,23 +423,86 @@
 
         $("#form1").on('click', '.endadult', function () {
             if ($('#form' + form_num).valid()) {
-                $('.qsection' + qsection + '.adult' + cur_adult).hide();
-                $('li.qsection' + qsection + '.adult' + cur_adult).removeClass("activeques");
-                set_ignore(qsection);
-                if(!adult_edit_mode) {
-                    add_adult_row(adult_ct);
+                if (!any_adult_income()){
+                    $('#adultincomeModal').foundation('reveal','open');
                 }
                 else {
-                    set_adultname_on_row(cur_adult);
-                    adult_edit_mode = false;
+                    $('.qsection' + qsection + '.adult' + cur_adult).hide();
+                    $('li.qsection' + qsection + '.adult' + cur_adult).removeClass("activeques");
+                    set_ignore(qsection);
+                    if (!adult_edit_mode) {
+                        add_adult_row(adult_ct);
+                    }
+                    else {
+                        set_adultname_on_row(cur_adult);
+                        adult_edit_mode = false;
+                    }
+                    $('#finishadults').show();
+                    $('#noadults').hide();
+                    $('#helpcontainer').remove();
+                    $(help3_template()).insertAfter("#helphere");
+                    $('#adultdash').show();
                 }
-                $('#finishadults').show();
-                $('#noadults').hide();
-                $('#helpcontainer').remove();
-                $( help3_template()).insertAfter( "#helphere" );
-                $('#adultdash').show();
-
             }
+        });
+
+        function any_adult_income() {
+            var incamt = 0;
+
+            var adultincome = $('#form1').find('input[name^="adultincome[' + cur_adult + ']"]');
+            if (adultincome.length == 0){
+                return false;
+            }
+            else {
+                for (var i = 0; i < adultincome.length; ++i){
+                    incamt += parseFloat(adultincome[i]["value"]);
+                }
+                if (incamt){
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+
+         $("#noincome").on('click', function () {
+            $('#adultincomeModal').foundation('reveal','close');
+            $('.qsection' + qsection + '.adult' + cur_adult).hide();
+            $('li.qsection' + qsection + '.adult' + cur_adult).removeClass("activeques");
+            set_ignore(qsection);
+            if (!adult_edit_mode) {
+                add_adult_row(adult_ct);
+            }
+            else {
+                set_adultname_on_row(cur_adult);
+                adult_edit_mode = false;
+            }
+            $('#finishadults').show();
+            $('#noadults').hide();
+            $('#helpcontainer').remove();
+            $(help3_template()).insertAfter("#helphere");
+            $('#adultdash').show();
+        });
+
+        $("#yesincome").on('click', function () {
+            $('#adultincomeModal').foundation('reveal','close');
+            adultincomeid[adult_ct - 1] = adultincomeid[adult_ct - 1] + 1;
+            var context = {adult_ct: adult_ct, income_ct: adultincomeid[adult_ct - 1]};
+            $( adult_income_template(context) ).insertBefore( "#incomeaddend" );
+            $('.adult' + adult_ct + ' .validate').each(function () {
+                    $(this).rules("add", {
+                        required: true
+                    });
+                 });
+            $('.adult' + adult_ct + ' .valincome').each(function () {
+                    $(this).rules("add", {
+                        number: true,
+                        messages: {
+                            number: "Please enter valid number. $ symbol not required."
+                        }
+                    });
+            });
         });
 
         $("#adultdash").on('click', '.editadult', function () {
@@ -480,15 +541,6 @@
             other_edit_mode = true;
         });
 
-  /*      $('li.section5.qsection12').on('click', '.editcontact', function () {
-            $('li.section5.qsection12').hide()
-            qsection = 9;
-            $('#helpcontainer').remove();
-            $( help5_q9_template()).insertAfter( "#helphere" );
-            $('li.qsection' + qsection).addClass("activeques");
-            $('li.qsection' + qsection).show();
-            remove_ignore(qsection);
-        });   */
 
         $("#form1").on('click', '.endotherchild', function () {
             if ($('#form' + form_num).valid()) {
@@ -706,6 +758,7 @@
                 $(this).html(name)
             });
             $('#adultdash .adultfirstname').html(name)
+            $('#adultincomeModal .adultfirstname').html(name)
 
         }
 
@@ -839,18 +892,6 @@
                 $('ol.prog li:nth-child(' + cursection + ')').addClass("active");
                 section = parseInt(cursection);
             }
-        }
-
-        function total_child_income(){
-
-        }
-
-        function total_other_income(){
-
-        }
-
-        function total_adult_income(){
-
         }
 
 
