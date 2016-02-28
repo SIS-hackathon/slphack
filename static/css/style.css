@@ -61,6 +61,7 @@ body.lp {
   background-image:url("../img/usda_lunch_bg.jpg");
   background-position: center center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 body.lp .right-content {
   background: rgba(255,255,255,0.85);
@@ -833,9 +834,10 @@ a {
 
 #help-dropdown {
   width:450px;
-  height: 500px !important;
+  max-height: 500px !important;
   overflow:scroll;
   border:solid 1px #ccc;
+  background: #f9f9f9;  
 }
 
 #help-dropdown .has-form {
