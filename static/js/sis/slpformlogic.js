@@ -1010,6 +1010,21 @@
                  set_left_panel()            }
         });
 
+        $("#form1").on('click', '#nopgmcasenumber', function () {
+            if (this.checked ) {
+                $('#pgm_case_num').addClass("ignore")
+                $('#pgm_case_num').val("")
+            }
+            else {
+                $('#pgm_case_num').removeClass("ignore")
+            }
+        });
+
+        $("#form1").on('focus', '#pgm_case_num', function () {
+            $('#nopgmcasenumber').prop('checked', false)
+            $('#pgm_case_num').removeClass("ignore")
+        });
+
         $('#noadultsscheckmark').click(function() {
             if (this.checked ) {
                 qsection = 7;
@@ -1024,6 +1039,78 @@
         $("#adult_ss").focus( function() {
             $('#noadultsscheckmark').prop('checked', false)
             remove_ignore(7)
+        });
+
+        $("#form1").on('click', '#chgadult', function () {
+            $('li.qsection' + qsection).hide();
+            $('li.qsection' + qsection).removeClass("activeques");
+            set_ignore(qsection);
+            $('#adultdash').addClass("activeques");
+            $('#helpcontainer').remove();
+            $( help3_template()).insertAfter( "#helphere" );
+            $('#adultdash').show()
+            set_left_panel()
+        });
+
+        $("#form1").on('click', '#chgstudent', function () {
+            $('li.qsection' + qsection).hide();
+            $('li.qsection' + qsection).removeClass("activeques");
+            set_ignore(qsection);
+            $('#helpcontainer').remove();
+            $( help_childdash_template()).insertAfter( "#helphere" );
+            $('#childdash').addClass("activeques");
+            $('#childdash').show()
+            set_left_panel()
+        });
+
+        $("#form1").on('click', '#chgnostudent', function () {
+            $('li.qsection' + qsection).hide();
+            $('li.qsection' + qsection).removeClass("activeques");
+            set_ignore(qsection);
+            $('#otherchildrendash').removeClass("activeques");
+            if (other_tot > 0) {
+                 $('#nootherchildren').hide()
+                 $('#finishedotherchildren').show()
+                 $('#helpcontainer').remove();
+                 $( help4_template()).insertAfter( "#helphere" );
+                 $('#otherchildrendash').show()
+             }
+             else {
+                 $('#finishedotherchildren').hide()
+                 $('#nootherchildren').show()
+                 $('#helpcontainer').remove();
+                 $( help4_template()).insertAfter( "#helphere" );
+                 $('#otherchildrendash').show()
+                 $("#finishchildrenincome" ).prop( "checked", false );
+             }
+             set_left_panel()
+        });
+
+        $("#form1").on('click', '#chgchildinc', function () {
+            $('li.qsection' + qsection).hide();
+            $('li.qsection' + qsection).removeClass("activeques");
+            set_ignore(qsection);
+            if (other_child_rule()) {
+                 child_return = true;
+                    $('#helpcontainer').remove();
+                    $( help_childdash_template()).insertAfter( "#helphere" );
+                    $('#childdash').addClass("activeques");
+                    $('#childdash').show();
+            }
+            else if(program_participation_rule()) {
+                $('#helpcontainer').remove();
+                $( help2_template()).insertAfter( "#helphere" );
+                $('li.section2.intro').addClass("activeques");
+                $('li.section2.intro').show()
+
+            }
+            else {
+                 $('#childrenincome').addClass("activeques");
+                 $('#childrenincome').show();
+                 $('#helpcontainer').remove();
+                 $( helpdash4_template()).insertAfter( "#helphere" );
+            }
+            set_left_panel()
         });
 
         $('#gotochilddash').click(function() {
@@ -1728,6 +1815,10 @@
                 $( helpdash4_template()).insertAfter( "#helphere" );
 
             }
+        });
+
+        $("#buttonshowappjson").on('click', function () {
+             $('#showappjson').foundation('reveal','open');
         });
 
     })

@@ -53,8 +53,63 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-.page, .appstart {
+.page {
   margin-top:90px;
+}
+
+body.lp {
+  background-image:url("../img/usda_lunch_bg.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+body.lp .right-content {
+  background: rgba(255,255,255,0.85);
+  border-radius:5px;
+  max-width:500px;
+  margin:100px auto;
+  padding:30px 25px 5px 25px;
+}
+
+body.lp .right-content hr {
+  border: solid #929292;
+  border-width: 1px 0 0;  
+}
+
+body.lp .right-content h2 {
+  font-weight: bold;
+  line-height:118%;
+  letter-spacing: -1.2px;
+}
+body.lp .right-content h5 {
+  letter-spacing: -0.4px;
+}
+
+body.lp .right-content h2,
+body.lp .right-content h5 {
+  color:#474747;
+}
+
+.img-desc {
+  position:absolute;
+  bottom:0px;
+  left:14px;
+  color:#fff;
+  opacity:0.6;  
+  font-size:14px;
+}
+
+.img-desc span {
+  margin-left:6px;
+}
+
+.img-desc img.usda-logo {
+  max-width:50px;
+}
+
+@media only screen and (max-width: 40.0625em) {
+
+.img-desc {display:none;}
+
 }
 
 button, .button {
@@ -1954,3 +2009,5 @@ margin: 0rem;
   font-size:20px;
   font-weight:600;
 }
+
+

@@ -1,4 +1,4 @@
-<!--  SLPHACKS's slpform.html
+<!--  SLPHACK's slpform.html
 * Copyright (c) 2016 The Center to Promote Healtcare Access, Inc., DBA Social Interest Solutions
 * Licensed under MIT License (https://github.com/SIS-hackathon/slphack/LICENSE)  -->
 
@@ -235,7 +235,7 @@
                 <span class="q1">What’s a social security number? Do I need to provide one?</span><br>
                 <span class="a1"> A social security number is a 9 digit number provided by the U.S. government to U.S. citizens, immigrants with permanent resident status, and some temporary residents.<br><br>
                 We request the last 4 digits of a social security number of an adult in the household, preferably the person signing the application, to help your student's school make a decision on your application
-                more quickly. However, we can accept the last 4 digits of a social security number of any adult in the household if the person signing the application does not have one. If no adults in the household have a social security number, you should check the box that says “I do not have a Social Security Number." Answering this way does not keep students in your household from
+                more quickly. However, we can accept the last 4 digits of a social security number of any adult in the household if the person signing the application does not have one. If no adults in the household have a social security number, you should check the box that says “No adults in the household have a Social Security Number." Answering this way does not keep students in your household from
                 receiving free or reduced price school meals.</span>
             </p>
           </li>
@@ -326,7 +326,7 @@
           <li class="top-questions"><!-- <h6>TOP QUESTIONS</h6> -->
             <p>
                 <span class="q1">What do the next few questions ask?</span><br>
-                <span class="a1">We will ask for ways to contact you and some demographic questions about the children in your household. The remaining questions are optional.<br></span>
+                <span class="a1">We will ask for ways to contact you and some demographic questions about the children in your household.<br></span>
             </p>
           </li>
           <li class="has-form">
@@ -400,6 +400,9 @@
          <div class="field">
              <input class="validatesec2" id="pgm_case_num" placeholder="Enter program case number(s)" type="text" name="pgm_case_num">
          </div>
+         <div class="field">
+              <input class="ignore" id="nopgmcasenumber" type="checkbox" name="nocasenumber" value="N"><label>I don't know the case number.</label>
+         </div>
      </div>
  </div>
 </script>
@@ -429,7 +432,7 @@
  </li>
  <li class="pm-step section1 qsection2 child{{child_ct}}">
         <h1>Is <span class="childfirstname"></span> a Foster Child?</h1>
-        <h4>A foster child is a child who is formally placed by a court or a state child welfare agency. Any students who are foster children can get free school meals.<span data-tooltip aria-haspopup="true" class="has-tip" title="Your student's school or school district may follow up with you to confirm the student's foster care status. Click the ? button in the top right corner for information about these statuses.
+        <h4>A foster child is a child who is formally placed by a court or a state child welfare agency. Any students who are foster children can get free school meals.<span data-tooltip aria-haspopup="true" class="has-tip" title="Your student’s school or school district may follow up with you to confirm the student’s foster care status. Click the ? button in the top right corner for more information.
         "><i class="fa fa-info-circle"></i></span></h4><br>        
         <ul style="max-width:400px;margin-left:auto;margin-right:auto;" class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
             <li>
@@ -510,8 +513,9 @@
 </li>
 <li class="pm-step section3 qsection6 adult{{adult_ct}}">
 
-    <h1><span class="adultfirstname"></span>'s Income</h1>
-    <h4>Please click the "add source of income" button below to add this person's sources of income. Be sure to think about all the kinds of money that this person gets, including money not earned from a job. <span data-tooltip aria-haspopup="true" class="has-tip" title="If you have questions about what counts as income, click the ? button in the corner."><i class="fa fa-info-circle"></i></span></h4><br>
+    <h1><span class="adultfirstname"></span>&#39;s Income</h1>
+    <h4>Please click the "add source of income" button below to add this person's sources of income. Be sure to think about all the kinds of money that this person gets, including money not earned from a job. 
+    <span data-tooltip aria-haspopup="true" class="has-tip" title="If you have questions about what counts as income, click the ? button in the corner."><i class="fa fa-info-circle"></i></span></h4><br>
     <div id="incomeaddend" class="row">
             <div class="small-12 columns">
                 <div class="field">
@@ -550,8 +554,8 @@
             </div>
         </div>
         <div class="small-12 medium-6 large-6 columns">
-            <div class="field">
-                <input class="qsection6 validate valincome" placeholder="Income Amount" type="text" name="adultincome[{{adult_ct}}][{{income_ct}}]">
+            <div class="row collapse field">
+                <div class="small-1 columns"><span class="prefix">$</span></div><div class="small-11 columns field"><input class="qsection6 validate valincome" placeholder="Income Amount" type="text" name="adultincome[{{adult_ct}}][{{income_ct}}]"></div>
             </div>
         </div>
         <div class="small-12 columns">
@@ -594,7 +598,9 @@
 <script id="studentincome-template" type="text/x-handlebars-template">
     <li class="pm-step section4 qsection20 child{{cur_childincome}}">
         <h1>Child Income Source for <span id="childincname"></span></h1>
-        <h4>Please click the "add source of income" button below to add this person's sources of income. Be sure to think about all the kinds of money that this person gets, including money not earned from a job. <span data-tooltip aria-haspopup="true" class="has-tip" title="If you have questions about what counts as income, click the ? button in the corner."><i class="fa fa-info-circle"></i></span></h4><br>
+        <h4>Please click the "add source of income" button below to add this person's sources of income. Be sure to think about all the kinds of money that this person gets, including money not earned from a job. <span data-tooltip aria-haspopup="true" class="has-tip" 
+        title="If you have questions about what counts as income, click the ? button in the corner.
+        "><i class="fa fa-info-circle"></i></span></h4><br>
         <div id="childincomeaddend" class="row">
             <div class="small-12 columns">
                 <div class="field">
@@ -650,8 +656,8 @@
                 </div>
             </div>
             <div class="small-12 medium-6 large-6 columns">
-                <div class="field">
-                    <input class="qsection20 validate valincome" placeholder="Income Amount" type="text" name="{{childtype}}income[{{cur_income}}][{{income_ct}}]">
+            <div class="row collapse field">
+                <div class="small-1 columns"><span class="prefix">$</span></div><div class="small-11 columns field"><input class="qsection20 validate valincome" placeholder="Income Amount" type="text" name="{{childtype}}income[{{cur_income}}][{{income_ct}}]"></div>
                 </div>
             </div>
             <div class="small-12 medium-12 large-12 columns">
@@ -710,12 +716,13 @@
         <div style="text-align:left; font-size: 14px">
             <ul class="small-block-grid-1" style="text-align: left;">
                  <li class="text-center">
-                     We collected information about <b>{{app.hhnum}}</b> individual(s). Information about each person is provided below.
+                     We collected information about <b>{{app.hhnum}}</b> individual(s).  Information about each person is provided below. When you have reviewed this information and confirmed that the number of people and the information provided on them is correct, type in your name as your electronic signature below and click “SUBMIT” to submit your application.
                  </li>
              </ul>
             <ul class="small-block-grid-1" style="text-align: left;border-top: 1px solid #ccc;">
                 <li>
                     <h2>Students</h2>
+                    <span style="font-size:.8rem"><a href="#" id="chgstudent">Edit Name and Status</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="chgchildinc">Edit Income</a></span>
                 </li>
             </ul>
             <ul class="small-block-grid-2" style="text-align: left">
@@ -736,6 +743,8 @@
             <ul class="small-block-grid-1" style="text-align: left;border-top: 1px solid #ccc;">
                 <li>
                     <h2>Additional Children</h2>
+                    <span style="font-size:.8rem"><a href="#" id="chgnostudent">Edit Name and Status</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="chgchildinc">Edit Income</a></span>
+
                 </li>
             </ul>
             <ul class="small-block-grid-2" style="text-align: left">
@@ -751,6 +760,7 @@
             <ul class="small-block-grid-1" style="text-align: left;border-top: 1px solid #ccc;">
                 <li>
                     <h2>Adults</h2>
+                     <span style="font-size:.8rem"><a href="#" id="chgadult">Edit Information</a></span>
                 </li>
             </ul>
             <ul class="small-block-grid-2" style="text-align: left">
@@ -776,10 +786,10 @@
                      {{/if_eq}}
                  </li>
              </ul>
-            {{#if app.program_set.pgm_case_num}}
+            {{#if app.program_set.program}}
             <ul class="small-block-grid-1" style="text-align: left;border-top: 1px solid #ccc;">
                  <li>
-                    <b>Household Program Participation:</b> {{#each app.program_set.program}} {{this}}&nbsp;{{/each}} Case Number: {{app.program_set.pgm_case_num}}
+                    <b>Household Program Participation:</b> {{#each app.program_set.program}} {{this}}&nbsp;{{/each}} Case Number: {{#if app.program_set.pgm_case_num}} {{app.program_set.pgm_case_num}} {{else}}No case number(s) provided.{{/if}}
                  </li>
              </ul>
             {{/if}}
@@ -815,7 +825,7 @@
                     <div class="row">
                         <div class="small-12 medium-6 large-6 columns">
                             <div class="field">
-                                  <input class="validate qsection12" data-rule-required="true" placeholder="Electronic Signature" type="text" name="contact_signature">
+                                  <input style="margin: 0px" class="validate qsection12" data-rule-required="true" placeholder="Electronic Signature" type="text" name="contact_signature"><div style="font-size:.8rem">Enter your name as an electronic signature. You must be an adult in the household in order to sign the application.</div>
                             </div>
                         </div>
                         <div class="small-12 medium-6 large-6 columns">
@@ -907,7 +917,6 @@
                         </li>
                         <li class="pm-step section1 qsection3 child1">
                                   <h1>Is <span class="childfirstname"></span> Any of the Below? </h1>
-                                  <h3>If no, please press the "CONTINUE" button.</h3>
                                   <h4>Any students with one or more of the statuses below can get free school meals. <span data-tooltip aria-haspopup="true" class="has-tip" title="Your student's school or school district may follow up with you to confirm these. Click the ? button in the top right corner for information about these statuses."><i class="fa fa-info-circle"></i></span></h4><br>
                                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">
                                        <li>
@@ -937,6 +946,7 @@
                                    </ul>
                                 <hr>
                                 <div class="slpnavigator">
+                                  <h5 class="text-center">If no, please press the "CONTINUE" button.</h5>                                  
                                     <input type="button" class="round button childgotoback" value="< BACK">
                                     <input type="button" class="round button endchild" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
                                 </div>
@@ -973,7 +983,6 @@
                         </li>
                         <li class="pm-step section2 qsection4">
                                 <h1>Does anyone in the household participate in one or more of the benefits programs below?</h1>
-                                <h3>If no, please press the "CONTINUE" button.</h3>
                                 <h4>Someone in the household participating in one or more of the below means all students in your household can get free school meals. If yes, please select a program and provide a case number if there is one. <span data-tooltip aria-haspopup="true" class="has-tip" title="Providing just one program below is enough if your household participates in more than one program."><i class="fa fa-info-circle"></i></span></h4>
                                 <div class="row">
                                      <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
@@ -999,6 +1008,7 @@
                                 </div>
                                 <hr>
                                  <div class="slpnavigator">
+                                  <h5 class="text-center">If no, please press the "CONTINUE" button.</h5>                                                                    
                                     <input type="button" class="round button sectionstartback" value="< BACK">
                                     <input type="button" id="otherprograms" class="round button" value="CONTINUE"> &nbsp;&nbsp;&nbsp;
                                 </div>
@@ -1050,7 +1060,7 @@
                             <div class="row">
                                 <div class="small-12 columns">
                                     <div class="field">
-                                      <input class="ignore" id="noadultsscheckmark" type="checkbox" name="noadultss" value="Y"> <label for="noadults">No Adults in the household have a Social Security Number.</label>
+                                      <input class="ignore" id="noadultsscheckmark" type="checkbox" name="noadultss" value="Y"> <label for="noadults">No adults in the household have a Social Security Number.</label>
                                     </div>
                                 </div>
                             </div>
@@ -1142,7 +1152,7 @@
                                       <div class="small-12 medium-10 large-10 small-centered columns">
                                           <div class="small-12 columns">
                                               <div class="field">
-                                                <input class="validate qsection9 ignore" placeholder="Street Address (optiona)" type="text" name="contact_address">
+                                                <input class="validate qsection9 ignore" placeholder="Street Address (optional)" type="text" name="contact_address">
                                               </div>
                                            </div>
                                            <div class="small-12 medium-6 large-6 columns">
@@ -1219,12 +1229,12 @@
                                     <div class="small-12 medium-10 large-10 small-centered columns">
                                         <div class="small-12 medium-6 large-6 columns">
                                             <div class="field">
-                                                <input class="validate qsection9 ignore" placeholder="Area Code and Phone Number {optional}" data-rule-phoneUS="true" data-msg-phoneUS="Provide valid phone number with area code" type="text" name="contact_phone">
+                                                <input class="validate qsection9 ignore" placeholder="Area Code & Phone Number (optional)" data-rule-phoneUS="true" data-msg-phoneUS="Provide valid phone number with area code" type="text" name="contact_phone">
                                             </div>
                                         </div>
                                         <div class="small-12 medium-6 large-6 columns">
                                             <div class="field">
-                                                <input class="validate qsection9 ignore" placeholder="someone@email.com {optional}" data-rule-email="true" data-msg-email="Provide valid email address" type="text" name="contact_email">
+                                                <input class="validate qsection9 ignore" placeholder="someone@email.com (optional)" data-rule-email="true" data-msg-email="Provide valid email address" type="text" name="contact_email">
                                             </div>
                                         </div>
                                         <div class="small-12 medium-6 large-6 columns">
@@ -1340,17 +1350,14 @@ Washington, D.C. 20250-9410;
                         <li class="pm-step section7 qsection13">
                             <h1>Thank you for your application!</h1>
                             <h4>You will hear back about your application soon. If you have any questions about your application, call or email the school or school district.</h4><br><br>
-
+                            <h4>If you are interested in getting help paying for food for your family beyond school meals, you can apply for the Supplemental Nutrition Assistance Program (SNAP) by following this link: <a href="http://www.fns.usda.gov/snap/apply" target="_blank">http://www.fns.usda.gov/snap/apply</a></h4>
+                            <hr><br><br>
                                 <div class="row">
                                     <div class="small-12 columns">
-                                        <h4><b>The information below reprresents the JSON data object generated by this application which contains all pertinent application data. This dataset can be exported or sent to
-                                            any backend data repository for persistent data storage.</b>
-                                        </h4>
-                                        <div class="field" id="outputjson" style="text-align: left">
-                                        </div>
+                                        <a href="#" id="buttonshowappjson" class="radius button">View Application Data Set</a>
                                     </div>
                                 </div>
-                                <hr>
+                                <hr><br><br>
                                 <div class="slpnavigator">
                                     <input type="button" class="round button contactgotoback" value="< BACK">
                                 </div>
@@ -1359,11 +1366,20 @@ Washington, D.C. 20250-9410;
             </ol>
 
             <!-- Reveal Modals begin -->
-            <div id="adultincomeModal" class="reveal-modal" data-reveal>
-              <h2 id="firstModalTitle">Does <span class="adultfirstname"></span> have any income?</h2>
+            <div id="adultincomeModal" class="reveal-modal medium" data-reveal>
+              <h2 class="text-center" id="firstModalTitle">Does <span class="adultfirstname"></span> have any income?</h2>
               <p>Remember, you should include earnings from work, public assistance, child support, alimony, pensions, retirement, and other sources. Payments for foster care children and some military pay do not need to be included.</p>
-              <p><div style="text-align:right"><a href="#" id="noincome" class="secondary button">No Income</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="yesincome" class="secondary button">+ Add Income</a></div></p>
+              <p><div style="text-align:center"><a href="#" id="noincome" class="secondary button">No Income</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="yesincome" class="secondary button">+ Add Income</a></div></p>
                 <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+            </div>
+
+            <!-- Reveal Modals begin -->
+            <div id="showappjson" class="reveal-modal" data-reveal>
+              <h2 class="text-center" id="ModalTitle">Application Data Export</h2>
+              <p>The information below represents the JSON data object generated by this application which contains all pertinent application data. This dataset can be exported or sent to
+                  any backend data repository for persistent data storage.</p>
+              <div class="field" id="outputjson" style="text-align: left"></div>
+              <a class="close-reveal-modal" aria-label="Close">&#215;</a>
             </div>
 
           </div>

@@ -1,4 +1,4 @@
-Copyright and license Code and documentation copyright 2016 The Center to Promote Healtcare Access, Inc., DBA Social Interest Solutions. 
+Copyright and license Code and documentation copyright 2016 The Center to Promote Healthcare Access, Inc., DBA Social Interest Solutions.
 
 Code released under the MIT license. Documents released under Creative Commons license.
 
