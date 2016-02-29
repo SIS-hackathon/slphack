@@ -10,5 +10,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 *********************************
 
-All files located in SIS-hackathon/slphack/static/js are externally maintained libraries used by this software which have their own open source licenses; we recommend you read them, as their terms may differ from the terms above.  The file in SIS-hackathon/slpapp/static/js/SIS was written by Social Interest Solutions and is licensed under the MIT license.
+All files located in SIS-hackathon/slphack/static/js are externally maintained libraries used by this software which have their own open source licenses; we recommend you read them, as their terms may differ from the terms above.  The file in SIS-hackathon/slphack/static/js/SIS was written by Social Interest Solutions and is licensed under the MIT license.
 
