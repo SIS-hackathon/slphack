@@ -1,6 +1,6 @@
 #
 # SLPHACK's slphack.py
-# Copyright (c) 2016 The Center to Promote Healtcare Access, Inc., DBA Social Interest Solutions
+# Copyright (c) 2016 The Center to Promote Healthcare Access, Inc., DBA Social Interest Solutions
 # Licensed under MIT (https://github.com/SIS-hackathon/slphack/LICENSE)
 #
 
