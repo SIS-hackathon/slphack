@@ -1,6 +1,6 @@
 /*!
 * SLPHACK's slpformlogic.js
-* Copyright (c) 2016 The Center to Promote Healthcare Access, Inc., DBA Social Interest Solutions
+* Copyright (c) 2016 The Center to Promote Healtcare Access, Inc., DBA Social Interest Solutions
 * Licensed under MIT License (https://github.com/SIS-hackathon/slphack/LICENSE.txt)
 */
     var slpapp = {};
@@ -882,9 +882,7 @@
         function set_left_panel(){
             var element = $("#form1").find(".activeques");
             var classes = element.attr("class").split(" ");
-            console.log(element, classes)
             var cursection = classes[1].substr(7,1)
-            console.log(cursection, section)
             if (parseInt(cursection) != section){
                 $('ol.prog li:nth-child(' + section + ')').removeClass("active");
                 $('ol.prog li:nth-child(' + section + ')').addClass("todo");
@@ -1279,7 +1277,6 @@
 
                 slpapp = {};
                 var formdata = $('#form1').serializeArray();
-                console.log(formdata)
                 var childObject = {};
                 $.each(formdata,
                     function (i, v) {
@@ -1553,7 +1550,6 @@
                 }
                 slpapp["hhincome"] = hhincome;
                 slpapp["hhnum"] = slpapp["children"].length + slpapp["nostudent_children"].length + slpapp["adults"]["adults"].length;
-                console.log(slpapp)
                 $('li.qsection' + qsection).hide()
                 $('li.qsection' + qsection).removeClass("activeques");
                 set_ignore(qsection)
@@ -1636,9 +1632,7 @@
                 }
             },
              errorPlacement: function (error, element) {
-      /*         $(element).closest('.columns').next().find('.error_label').html(error);   */
               error.appendTo( element.parent(".field"));
-               console.log(error)
              }
         });
 
