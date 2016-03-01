@@ -22,7 +22,7 @@ Web-Browser Front-End
 Back-End Python Stack
 - Web Server supporting WSGI
 - Python
-- Flask
+- Flask (http://flask.pocoo.org/)
 - Jinja
 
 To this configuration any back-end database repository can be added- either SQL (mySQL) or noSQL (such as CouchDB or MongoDB).
