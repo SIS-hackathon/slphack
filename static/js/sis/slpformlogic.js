@@ -1,7 +1,7 @@
 /*!
 * SLPHACK's slpformlogic.js
 * Copyright (c) 2016 The Center to Promote Healthcare Access, Inc., DBA Social Interest Solutions
-* Licensed under MIT License (https://github.com/SIS-hackathon/slphack/LICENSE)
+* Licensed under MIT License (https://github.com/SIS-hackathon/slphack/LICENSE.txt)
 */
     var slpapp = {};
     var cur_child = 1;

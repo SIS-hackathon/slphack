@@ -1,7 +1,7 @@
 #
 # SLPHACK's slphack.py
 # Copyright (c) 2016 The Center to Promote Healthcare Access, Inc., DBA Social Interest Solutions
-# Licensed under MIT (https://github.com/SIS-hackathon/slphack/LICENSE)
+# Licensed under MIT (https://github.com/SIS-hackathon/slphack/LICENSE.txt)
 #
 
 from flask import Flask, jsonify, render_template, request, redirect, json, send_from_directory, abort
